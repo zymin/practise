@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+	<head>
+		<title>Follow me</title>
+		<meta charset="utf-8">
+		<meta content="" name="description">
+		<meta content="" name="keywords">
+		<meta content="application/xhtml+xml;charset=UTF-8" http-equiv="Content-Type">
+		<meta content="telephone=no, address=no" name="format-detection">
+        <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+        <meta http-equiv="Pragma" content="no-cache" />
+        <meta http-equiv="Expires" content="0" />
+		<link href="css/main.css?v=" rel="stylesheet" />
+        <script src="js/body-js/global-variable.js"></script>
+        <script type="text/javascript" src="js/body-js/getDate.js"></script>
+        <script src="js/app.min.js"></script>
+	</head>
+	<body onselectstart="return true;" ondragstart="return false;">
+        		<div class="container">
+			<div class="loading-img"><img src="images/loading.gif" /></div>
+
+			<div class="swipe" id="swipe">
+				<ul>
+
+                    <li data-role="" checkexpire="js-flag-expired"><div style="background-image: url(images/default_bg.jpg)"></div></li>
+
+
+                    <li data-role="" checkexpire="js-flag-normal"><div style="background-image: url(images/busy.jpg)"></div></li>
+
+
+                    <li data-role="" checkexpire="js-flag-normal"><div style="background-image: url(images/drink.jpg)"></div></li>
+
+
+                    <li data-role="" checkexpire="js-flag-normal"><div style="background-image: url(images/cultrue.jpg)"></div></li>
+
+
+                    <li checkexpire="js-flag-normal">
+					        	<!--带按钮的图片需加上class top/middle/bottom ，位置分别在上中下 -->
+                        <div class="bottom" style="background-image: url(images/welcome.jpg)">
+                               <script>
+//                                   <!--跳转的地址-->
+                            var biz_jump_url = "http://290390.m.weimob.com/weisite/home?pid=290390&bid=423593&wechatid=fromUsername";
+                            ary_biz_jump_url.push(biz_jump_url);
+                            ary_biz_jump_id.push('biz_jump_'+'4');
+                            </script>
+                            <a class="links" id="biz_jump_4" href="http://290390.m.weimob.com/weisite/home?pid=290390&bid=423593&wechatid=fromUsername"><img src="images/come-in.png" /></a>
+                        </div>
+					</li>
+				</ul>
+			</div>
+            <div id="musicWrap" class="music_wrap f-hide">
+                    <span class="text move hide">打开</span>
+                     <i id="audioBtn" data-src="http://video.weimob.com/wedding/YouGotMe.mp3" class="btn_music on"></i>
+             </div>
+            
+			<div id="arrowV" class="arrow_v f-hide"><p></p></div>
+
+			<div id="arrowH" class="arrow_h f-hide">
+				<span class="arrow_l"></span>
+				<span class="arrow_r"></span>
+			</div>
+
+			<div class="lottery" id="lottery"></div>
+			<div class="download_mask" id="downloadMask"><i></i></div>
+		</div>
+        
+        	</body>
+<script type="text/javascript" src="js/share_channel.js?v=123456"></script>
+<script type="text/javascript" src="js/base64.js?v=10101011"></script>
+<script type="text/javascript" src="js/st.js?v=10101011"></script>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>刮刮乐测试</title>
+    <meta charset="utf-8">
+    <style type="text/css">
+        /*body{*/
+            /*background: url("images/default_bg.jpg") repeat 0 0;*/
+        /*}*/
+
+        .container
+        {
+            position: relative;
+            width: 400px;
+            height: 160px;
+            margin: 100px auto 0;
+            /*background: url(images/busy.jpg) no-repeat 0 0;*/
+            /*background-size: 100% 100%;*/
+        }
+
+        #front, #back
+        {
+            position: absolute;
+            width: 200px;
+            left: 50%;
+            top: 100%;
+            margin-left: -130px;
+            height: 80px;
+            border-radius: 5px;
+            border: 1px solid #444;
+        }
+
+    </style>
+
+</head>
+<body>
+<div class="container">
+    <canvas id="back" width="200" height="80"></canvas>
+    <canvas id="front" width="200" height="80"></canvas>
+</div>
+</body>
+<script type="text/javascript" src="js/jquery-1.9.1.js"></script>
+<script type="text/javascript" src="js/canvas2d.js"></script>
+<script type="text/javascript" src="js/GuaGuaLe2.js"></script>
+
+<script type="text/javascript">
+    $(function ()
+    {
+        var guaguale = new GuaGuaLe("front", "back");
+        guaguale.init({msg: "￥5.00"});
+    });
+</script>
+</html>

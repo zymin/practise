@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>抽奖</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/ratchet.min.css">
+    <link rel="stylesheet" href="css/ratchet-theme-ios.css">
+</head>
+<style type="text/css">
+    .lotteryBg{
+        width: 100%;
+        height: 240px;
+        background: url('images/P10-1.png');
+        background-size: 100% 100%;
+        background-position: 0 0;
+        background-repeat: no-repeat;
+        margin-top: 40px;
+    }
+    /*中奖之后的显示*/
+    .prize-img {
+        background: url(images/prize.png);
+        width: 150px;
+        height: 41px;
+        margin: 0 auto;
+        -webkit-background-size: 150px 41px;
+        background-size: cover;
+        top: 10px;
+        right: 26px
+    }
+    .contact-btn{
+        background: url("images/P10-4.png");
+        background-size: cover;
+        width: 120px;
+        height: 34px;
+    }
+    .lostImg {
+        background: url(images/thanks-attend.png);
+        width: 150px;
+        height: 41px;
+        margin: 30px auto;
+        -webkit-background-size: 150px 41px;
+        background-size: cover;
+        top: 10px;
+        right: 26px
+    }
+    .lost-world{
+        width: 100%;
+        height: 30px;
+        color: #fff;
+        text-align: center;
+        font-size: 26px;
+        /*margin: 0;*/
+        /*font-weight: 600;*/
+    }
+    #lotteryImg{
+        height: 200px;
+        width: 200px;
+        margin: 20px auto;
+    }
+    #lottery-cursor{
+        width: 80px;height: 80px;;margin: -34px auto
+    }
+    .promoteContact{
+        background: url("images/contact-way.png");
+        width: 200px;
+        height: 18px;
+        margin: 10px auto;
+        -webkit-background-size: 200px 18px;
+        background-size: cover;
+        top: 10px;
+        right: 26px
+    }
+</style>
+<body>
+<div class="content" style="background-color: #e61a0f;">
+    <div class="lotteryBg">
+        <div class="lottery"  style="width: 200px;height: 200px;margin: 0 auto;">
+            <img src="images/lottery.png" id="lotteryImg">
+        </div>
+        <div class="lottery-cursor" style="width: 80px;height: 80px;margin: -94px auto;position: relative">
+            <img src="images/P10-cursor.png" id="lottery-cursor">
+        </div>
+    </div>
+    <!--==========中奖之后的蒙版=================-->
+    <div class="prize" style="margin-top: 50px;display: none">
+        <p class="prize-img"></p>
+        <div class="promoteContact"></div>
+        <div style="margin: 0 auto;width: 120px;height: 34px;">
+            <p class="contact-btn"></p>
+        </div>
+    </div>
+    <div class="lost" style="">
+        <!--<p class="lostImg"></p>-->
+        <p class="lost-world">中奖还要靠颜值!</p>
+        <p class="lost-world">分享给小伙伴们试试手气吧!</p>
+    </div>
+</div>
+
+</body>
+<script src="js/zepto.1.1.4.min.js"></script>
+<script src="http://pv.sohu.com/cityjson?ie=utf-8"></script>
+<script>
+    $(".contact-btn").on("tap", function () {
+        window.location.href ="winner.html";
+    });
+    $(function(){
+        window.requestAnimFrame = (function () {
+            return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function (callback) {
+                window.setTimeout(callback, 1000 / 60)
+            }
+        })();
+        var _ip = returnCitySN['cip'];
+        var _city = returnCitySN['cid'];
+        var lotteryImg = document.getElementById("lotteryImg");
+        var now;
+        var prize;
+        var lostDeg = [46,66,76,166,186,196,286,306,316];
+        var secondPrizeDeg = [126,246];
+        var totalDeg = 360 * 3 + 0;
+        var steps=[];
+        var a = 0.01;
+        var i = 10;
+        function start(deg){
+            deg = deg || lostDeg[parseInt(lostDeg.length * Math.random())];
+            totalDeg = 360 * 5 + deg;
+            steps = [];
+            now = 0;
+            countSteps();
+            requestAnimFrame(step);
+        }
+        window.start = start;
+        function countSteps() {
+            var t = Math.sqrt(2 * totalDeg / a);
+            var v = a * t;
+            for (var i = 0; i < t; i++) {
+                steps.push((2 * v * i - a * i * i) / 2)
+            }
+            steps.push(totalDeg);
+        }
+        function step() {
+            lotteryImg.style.webkitTransform = 'rotate(' + steps[now++] + 'deg)';
+            lotteryImg.style.MozTransform = 'rotate(' + steps[now++] + 'deg)';
+            if (now < steps.length) {
+                requestAnimFrame(step);
+            } else {
+                setTimeout(function () {
+                    if (prize != null) {
+                        if (prize == 1) {
+                            $(".prize").css({"display":"block"})
+                        } else if (prize == 2) {
+                            $(".prize").css({"display":"block"})
+                        }
+                        else if (prize == 0) {
+                            $(".lost").css({"display":"block"})
+                        }
+                    } else {
+                        $(".lost").css({"display":"block"})
+                    }
+                }, 200)
+            }
+        }
+        $("#lottery-cursor").on("tap",function(){
+            $.ajax({
+                type:"GET",
+                data:{"city":_city,"ip":_ip},
+                url:"/welfare/air_asia/lottery.service",
+                dataType:"json",
+                success: function (data) {
+                    if(data.success ==true){
+                        if(data.R == 2){//中二等奖
+                            // 显示中奖浮沉
+                            prize = data.R;
+                            var deg2 = secondPrizeDeg[parseInt(secondPrizeDeg.length * Math.random())]+360*5;
+                            start(deg2);
+                        }else if(data.R == 1){//中一等奖
+                            // 显示中奖浮沉
+                            prize = data.R;
+                            start(6);
+                        }else if(data.R == 0){
+                            prize = data.R;
+                            start();
+                        }
+                    }else{
+                        //alert(JSON.stringify(data));
+                        alert(data.error.message);
+                    }
+                },error:function(data){
+                    alert(JSON.stringify(data));
+                }
+            })
+        })
+    })
+</script>
+</html>

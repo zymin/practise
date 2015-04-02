@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>刮刮乐demo</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    .container{
+        width: 100%;
+        /*height: 960px;*/
+        background-color: #ccc;
+    }
+    .container canvas{
+        position: absolute;
+        top: 0;
+        left: 50%;
+        width: 640px;
+        height: 100%;
+        margin-left: -320px;
+    }
+</style>
+<body>
+<div class="container">
+    <!--显示刮开后的内容-->
+    <canvas id="bottom-lottery" width="640"></canvas>
+    <!--显示涂层-->
+    <canvas id="lottery" height="960"></canvas>
+</div>
+</body>
+<script src="js/zepto.1.1.4.min.js"></script>
+<script>
+    /*
+     * 设置图片自适应
+     * */
+    var deviceHeight =$(window).height();
+    $("canvas").css({"height":deviceHeight+"px","width":2*deviceHeight/3+"px","marginLeft":-deviceHeight/3+"px"});
+    $("canvas")[0].width = 2*deviceHeight/3;
+    $("canvas")[0].height = deviceHeight;
+    $("canvas")[1].width = 2*deviceHeight/3;
+    $("canvas")[1].height = deviceHeight;
+    $(".container").css({"height":deviceHeight+"px"});
+    /*涂层图片*/
+     var lottery = document.getElementById("lottery");
+    var lotteryCtx = lottery.getContext("2d");
+    var img = new Image();
+    img.onload = function(){
+        lotteryCtx.drawImage(img,0,0);
+        lotteryCtx.globalCompositeOperation = 'destination-out';//在与源不重叠的区域上保留目标。其他部分都变成透明的；先绘制的是目标即：mask
+    };
+    img.src = "slowly-music.jpg";
+
+    /*开奖图片*/
+    var bottomLottery = document.getElementById("bottom-lottery");
+    var bottomLotteryCtx = bottomLottery.getContext("2d");
+    var imgBottom = new Image();
+    imgBottom.src = "busy.jpg";
+    imgBottom.onload = function(){
+        bottomLotteryCtx.drawImage(imgBottom,0,0);
+    }
+    var isTouch = false;
+//    绑定事件
+    function drawMove(x,y){
+//        alert(123)
+//        e.preventDefault();
+        var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+            if(isTouch == true){
+                lotteryCtx.beginPath();
+                lotteryCtx.arc(x,y,50,0,Math.PI * 2,true);
+                lotteryCtx.closePath();
+                lotteryCtx.fillStyle = "#fff";
+                lotteryCtx.fill();
+            }
+    }
+    function eventStart(e) {
+        isTouch = true;
+        var offsetX = lottery.offsetLeft,
+                offsetY = lottery.offsetTop;
+        var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+        var x = ((device ? e.touches[0].clientX : e.clientX) + document.body.scrollLeft || e.pageX) - offsetX || 0;
+        var y = ((device ? e.touches[0].clientY : e.clientY) + document.body.scrollTop || e.pageY) - offsetY || 0;
+        if(lastX != ''&& lastY != ''){
+            if(lastX != x){
+                var k = (lastY -y)/(lastX-x);
+                var b = y-k*x;
+                console.log("k==="+k+";b==="+b);
+                if(lastX > x){
+                    for(lastX;x<=lastX;lastX--){
+                        y = k * lastX + b;
+                        setTimeout(drawMove(x,y),500);
+                    }
+                }else{
+                    for(lastX;lastX <= x;lastX++){
+                        y = k *lastX + b;
+                        setTimeout(drawMove(x,y),500);
+                    }
+                }
+            }else{//当lastX == x时，属于纵轴线
+                if(lastY < y){
+                    for(lastY;lastY < y;lastY++){
+                        drawMove(x,lastY)
+                    }
+                }else{
+                    for(y;y <= lastY;y++){
+                        drawMove(x,y);
+                    }
+                }
+            }
+        }else{
+            drawMove(x,y);
+        }
+    }
+    function eventMove(e) {
+        var offsetX = lottery.offsetLeft,
+                offsetY = lottery.offsetTop;
+        var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+        var x = ((device ? e.touches[0].clientX : e.clientX) + document.body.scrollLeft || e.pageX) - offsetX || 0;
+        var y = ((device ? e.touches[0].clientY : e.clientY) + document.body.scrollTop || e.pageY) - offsetY || 0;
+        drawMove(x,y);
+    }
+//    记录鼠标弹起最后的位置
+    var lastX = '';
+    var lastY = '';
+    function eventEnd(e) {
+        var offsetX = lottery.offsetLeft,
+                offsetY = lottery.offsetTop;
+        var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
+        var x = ((device ? e.touches[0].clientX : e.clientX) + document.body.scrollLeft || e.pageX) - offsetX || 0;
+        var y = ((device ? e.touches[0].clientY : e.clientY) + document.body.scrollTop || e.pageY) - offsetY || 0;
+        lastX = x;
+        lastY = y;
+        console.log("lastX=="+lastX+";lastY==="+lastY);
+        isTouch = false;
+    }
+
+    window.onload = function(){
+        lottery.addEventListener('mousemove',eventMove);
+        lottery.addEventListener('mousedown',eventStart);
+        lottery.addEventListener('mouseup',eventEnd);
+
+        lottery.addEventListener('touchmove',eventMove);
+        lottery.addEventListener('touchstart',eventStart);
+        lottery.addEventListener('touchend',eventEnd);
+    }
+</script>
+</html>

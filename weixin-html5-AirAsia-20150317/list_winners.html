@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>中奖者列表</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/ratchet.min.css">
+    <link rel="stylesheet" href="css/ratchet-theme-ios.css">
+</head>
+<style>
+    .winner-list{
+        width: 80%;
+        margin: 20px auto;
+        border: 1px solid #B1CDE3;
+        padding:0;
+        border-collapse: collapse;
+        text-align: center;
+    }
+    .winner-list td {
+        border: 1px solid #B1CDE3;
+        background: #fff;
+        font-size:12px;
+        padding: 3px 3px 3px 8px;
+        color: #4f6b72;
+    }
+</style>
+<body>
+<header class="bar bar-nav">
+    <h1 class="title">中奖者列表</h1>
+</header>
+<div class="content">
+    <table class="winner-list">
+        <tr>
+            <td>姓名</td>
+            <td>手机号</td>
+            <td>身份证号</td>
+        </tr>
+    </table>
+</div>
+</body>
+<script src="js/zepto.1.1.4.min.js"></script>
+<script>
+    $.ajax({
+        type:"jsonp",
+        data:null,
+        jsonp:"callback",
+        jsonpCallback: 'winnerList' + new Date().getTime(),
+        url:"/welfare/air_asia/list_winners.service?format=jsonp",
+        dataType:"jsonp",
+        success: function (data) {
+            if(data.success == true){
+                var record = data.R;
+                var content = '';
+                for(var i=0;i<record.length;i++){
+                    content += '<tr><td>'+record[i].name+'</td><td>'+record[i].mobile+'</td><td>'+record[i].idcard+'</td></tr>'
+                }
+                $(".winner-list").append(content)
+            }else{
+                alert(JSON.stringify(data));
+            }
+        },error:function(data){
+            alert(JSON.stringify(data));
+        }
+    })
+</script>
+</html>

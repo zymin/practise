@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>中奖者填写信息</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/ratchet.min.css">
+    <link rel="stylesheet" href="css/ratchet-theme-ios.css">
+</head>
+<style>
+    .content{
+        background-color: #fe0000;
+    }
+    .container{
+        position: absolute;
+        background-image: url(images/P11-5.png);
+        background-position: 0 0;
+        background-size: cover;
+        background-repeat: no-repeat;
+        width: 278px;
+        height: 370px;
+        left: 50%;
+        top: 50%;
+        margin: -185px 0 0 -140px;
+    }
+    .container-form{
+        margin-top: 100px;
+    }
+    .content-padded{
+        width: 120px;
+        height: 48px;
+        margin: 0 auto;
+    }
+    .content-padded img{
+        width: 120px;
+        height: 48px;
+    }
+    #info-form input{
+        border-radius: 20px;
+        outline: none;
+    }
+    *:focus {outline: none;}
+</style>
+<body>
+<div class="content">
+    <div class=" container">
+        <div class="container-form">
+            <form id="info-form" style="padding: 20px">
+                <input type="text" placeholder="姓 名" id="name" name="name">
+                <input type="text" placeholder="手 机" id="mobile" name="mobile">
+                <input type="text" placeholder="身 份 证" id="idcard" name="idcard">
+                <div class="content-padded">
+                    <img src="images/P11-2.png" class="submitInfo">
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+</body>
+<script src="js/zepto.1.1.4.min.js"></script>
+<script>
+    var isTap = true;
+    $(".submitInfo").on("click",function(){//阻止重复点击按钮，将内容重复提交
+        var name = $("#name").val();
+        var mobile = $("#mobile").val();
+        var idCard = $("idcard").val();
+        if(name == '' || mobile == '' || idCard == ''){
+            alert("请正确填写您的姓名/手机/身份证");
+            return
+        }
+        if(isTap == true){
+            isTap = false;
+            $.ajax({
+                type:"POST",
+                data:$('#info-form').serialize(),
+                url:"/welfare/air_asia/winner.service",
+                dataType:"json",
+                success: function (data) {
+                    if(data.success == true){
+                        alert("感谢您对亚航的支持，工作人员将会与您联系！");
+                        window.location.href = "index.html";
+                    }else{
+                        alert(JSON.stringify(data));
+                    }
+                },error:function(data){
+                    alert(JSON.stringify(data));
+                }
+            })
+        }else{
+            alert("正在提交，请不要重复点击！");
+        }
+    })
+</script>
+</html>
