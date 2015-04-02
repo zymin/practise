@@ -10,10 +10,10 @@
     margin-left: -20px;
     opacity: 0
 }
-.avatar {
-    width: 39px;
-    height: 40px
-}
+/*.avatar {*/
+    /*width: 39px;*/
+    /*height: 40px*/
+/*}*/
 
 @media only screen and (-webkit-min-device-pixel-ratio: 1.5), only screen and (min--moz-device-pixel-ratio: 1.5), only screen and (min-resolution: 240dpi) {
     .notice-swipe-up {

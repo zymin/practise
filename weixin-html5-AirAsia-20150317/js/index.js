@@ -171,7 +171,6 @@ function preImg(ele){
 
 // 定义变量
 var screenHeight=$(window).height();
-var screenWidth = $(window).width;
 var pageNumber=0;
 var currentDistance=0;
 var contentList=$(".content-list");
