@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>canvas画出的椭圆</title>
+</head>
+<body>
+<canvas width="500" height="300" id="cc">您的浏览器不支持HTML5</canvas>
+</body>
+<script>
+//    椭圆封装函数
+    function DrawEllipse(Canvas,O,OA,OB)
+    {
+    //画椭圆，例子：var B=new Array(150,150); DrawEllipse(hb,B,50,30);
+        with (Canvas)
+        {
+            var x=O[0]+OA;
+            var y=O[1];
+            moveTo(x,y);
+            for (var i=0;i<=360;i++)
+            {
+                var ii=i*Math.PI/180;
+                var x=O[0]+OA*Math.cos(ii);
+                var y=O[1]-OB*Math.sin(ii);
+                lineTo(x,y);
+            }
+        }
+    }
+    var c=document.getElementById("cc");
+    var hb=c.getContext("2d");
+
+    var A=new Array(50,50);
+    var O=new Array(90,10);
+    var B=new Array(150,100);
+
+    hb.beginPath();
+    hb.fillStyle = "red";
+    hb.fill();
+    hb.strokestyle="#000000";
+
+    DrawEllipse(hb,B,50,90);
+    hb.stroke();
+
+    hb.closePath();
+</script>
+</html>
