@@ -202,8 +202,8 @@ Lottery.prototype = {
 
 window.onload = function () {
 //    alert(Lottery.prototype instanceof Object);
-    var lottery = new Lottery('lotteryContainer', 'slowly-music.jpg', 'image', 300, 100, drawPercent);
-    lottery.init('恭喜中奖', 'text');//百度图片：width=270px;height=129px
+    var lottery = new Lottery('lotteryContainer', '../my-guaguale/images/slowly-music.jpg', 'image', 300, 100, drawPercent);
+    lottery.init('../my-guaguale/images/busy.jpg', 'image');//百度图片：width=270px;height=129px
 
     document.getElementById('freshBtn').onclick = function() {
         drawPercentNode.innerHTML = '0%';
