@@ -4,119 +4,44 @@
     <meta charset="UTF-8">
     <title>css3中的scale使用</title>
 </head>
-<style>
-    *{
-        margin: 0;
-        padding: 0;
-    }
-    .content{
-        width: 100%;
-        height: 100%;
-        position: relative;
-    }
-    .part{
-        position: absolute;
-    }
-    .content-list{
-        position: absolute;
-        width: 100%;
-        top: 0;
-        left: 0;
-    }
-    .content-li{
-        width: 100%;
-        list-style: none;
-        background-color: #e8190f;
-        position: relative;
-    }
-    .page1{
-        width: 278px;
-        height: 371px;
-        top: 50%;
-        left: 50%;
-        margin-top: -185px;
-        margin-left: -140px;
-    }
-    img{
-        max-width: 100%;
-        height: auto;
-    }
-    /*加载项*/
-    .loading{
-        width: 50px;
-        height: 40px;
-        bottom: 18px;
-        left: 50%;
-        margin-left: -25px;
-        z-index: 5;
-        transition:all 1s ease-out;
-        animation:loadingMove 1s ease-in infinite;
-        -webkit-animation:loadingMove 1s ease-in infinite;
-    }
-    @keyframes loadingMove{
-        0%{
-            opacity: 0;
-            transform:translate3d(0,5px,0)
-        }
-        50%{
-            opacity: 1;
-            transform:translate3d(0,0,0)
-        }
-        100%{
-            opacity: 0;
-            transform:translate3d(0,-8px,0)
-        }
-    }
-    @-webkit-keyframes loadingMove{
-        0%{
-            opacity: 0;
-            -webkit-transform:translate3d(0,5px,0)
-        }
-        50%{
-            opacity: 1;
-            -webkit-transform:translate3d(0,0,0)
-        }
-        100%{
-            opacity: 0;
-            -webkit-tranform:translate3d(0,-8px,0)
-        }
-    }
-    /*翻页*/
-    .prevNextPage{
-        width: 120px;
-        height: 50px;
-        bottom: 100px;
-        left: 20px;
-    }
-    .prevNextPage button{
-        width: 100%;
-        height: 100%;
-        background-color: #09c4be;
-        outline: none;
-        border: none;
-    }
-</style>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/P0.css">
+<link rel="stylesheet" href="css/P1.css">
+<link rel="stylesheet" href="css/P2.css">
 <body>
 <div class="content">
+    <div class="loading-wrap">
+        <span class="part circle"></span>
+        <span class="part circle-loading"></span>
+    </div>
     <ul class="content-list">
         <li class="content-li">
-            <div class="page1 part">
+            <div class="page part P0">
                 <img src="images/P1-1.png" alt="重庆人的幸福是在解放碑，打望长腿妹儿">
             </div>
         </li>
-        <li class="content-li" style="display: none">
-            <div class="page1 part" style="opacity: 0">
+        <li class="content-li">
+            <div class="page part P1">
                 <img src="images/P2-1.png" alt="重庆人的幸福是在解放碑，打望长腿妹儿">
             </div>
         </li>
-        <div class="loading part">
-            <img src="images/white-arrow.png">
-        </div>
-        <div class="part prevNextPage"><button id="prevButton">上一页</button>&nbsp;&nbsp;&nbsp;&nbsp;<button id="nextButton">下一页</button></div>
+        <li class="content-li">
+            <div class="page part P2">
+                <img src="images/P3-1.png" alt="重庆人的幸福是在解放碑，打望长腿妹儿">
+            </div>
+        </li>
     </ul>
+    <div class="loading part">
+        <img src="images/white-arrow.png">
+    </div>
+    <div class="part prevNextPage">
+        <button id="prevButton">上一页</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;<button id="nextButton">下一页</button>
+    </div>
 </div>
 </body>
 <script src="js/zepto.1.1.4.min.js"></script>
+<script src="js/index.js"></script>
 <script>
     window.onresize = function () {
         $(".content-li").each(function () {

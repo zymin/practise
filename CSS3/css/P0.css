@@ -1,0 +1,22 @@
+/*不同的页面具有不同的效果 === P0的效果是缓缓上升*/
+.P0 img{
+    opacity: 0;
+    -webkit-transform:translate3d(0,200px,0);
+    -moz-transform:translate3d(0,200px,0);
+    -ms-transform:translate3d(0,200px,0);
+    -o-transform:translate3d(0,200px,0);
+    transform:translate3d(0,200px,0);
+    -webkit-transition:all 1s linear;
+    -moz-transition:all 1s linear;
+    -ms-transition:all 1s linear;
+    -o-transition:all 1s linear;
+    transition:all 1s linear;
+}
+.ariseUp img{
+    opacity: 1;
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -ms-transform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
