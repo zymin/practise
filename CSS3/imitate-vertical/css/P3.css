@@ -1,58 +1,123 @@
 /*p3中的动画*/
 /*标题*/
 .title{
-    position: absolute;
     top: 10px;
     left: 20px;
 }
 .front-title{
+    opacity: 0;
     width: 278px;
     height: 34px;
     background: url("../images/P4-1.png") no-repeat -228px -37px;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 .back-title{
+    opacity: 0;
     width: 278px;
     height: 34px;
     background: url("../images/P4-1.png") no-repeat -234px 1px;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 /*对话*/
 .dialogue{
-   position: absolute;
     top: 70px;
     left: 0;
-    z-index: 8;
 }
 .front-dialogue{
-     width: 233px;
-     height: 56px;
-     background: url("../images/P4-1.png") no-repeat 0 0;
+     width: 182px;
+     height: 43px;
+     opacity: 0;
+     background: url("../images/P4-1.png") no-repeat -52px 0;
+    z-index: 1;
+    -webkit-transform:translate3d(-200px,0,0);
+    -moz-transform:translate3d(-200px,0,0);
+    -ms-transform:translate3d(-200px,0,0);
+    -o-transform:translate3d(-200px,0,0);
+    transform:translate3d(-200px,0,0);
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
  }
+/*从左向右慢慢滑过的效果开始*/
+.skim-over{
+    opacity: 1;
+    -webkit-transform:translate3d(0,0,0);
+    -moz-transform:translate3d(0,0,0);
+    -mstransform:translate3d(0,0,0);
+    -o-transform:translate3d(0,0,0);
+    transform:translate3d(0,0,0);
+}
+/*从左向右慢慢滑过的效果结束*/
+.back-dialogue{
+    z-index: 10;
+}
 .back_1_dialogue{
     width: 199px;
+    opacity: 0;
     height: 44px;
     background: url("../images/P4-1.png") no-repeat 0 -56px;
     margin-left: 44px;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 .back_2_dialogue{
-    width: 233px;
+    top: 43px;
+    opacity: 0;
+    width: 190px;
     height: 39px;
     background: url("../images/P4-1.png") no-repeat -37px -101px;
     margin-top: 10px;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
 }
 /*场景*/
 .scene{
-    position: absolute;
     top: 78px;
 }
-.front-img{
-    width: 278px;
-    height: 312px;
-    background: url("../images/P4_front.png") no-repeat 0 0;
-    background-size: cover;
-}
 .back-img{
+    opacity: 0;
+    background: url("../images/P4_back.png") no-repeat 0 0;
+}
+.front-img{
+    opacity: 0;
+    background: url("../images/P4_front.png") no-repeat 0 0;
+}
+.front-img,.back-img{
     width: 278px;
     height: 312px;
-    background: url("../images/P4_back.png") no-repeat 0 0;
     background-size: cover;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -ms-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+/*翻转的css3代码*/
+.flip{
+    -webkit-transform:rotateX(180deg);
+    -moz-transform:rotateX(180deg);
+    -ms-transform:rotateX(180deg);
+    -o-transform:rotateX(180deg);
+    transform:rotateX(180deg);
 }

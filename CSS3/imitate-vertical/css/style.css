@@ -163,3 +163,9 @@ img{
     margin-top: 26px;
     background: url("../images/loading.png") no-repeat -23px 4px;
 }
+.fadeIn{
+    opacity: 1 !important;
+}
+.fadeOut{
+    opacity: 0 !important;
+}

@@ -12,20 +12,54 @@ var currentPage = 0;
 var screenHeight = $(window).height();
 var transitionString = "";
 $("#nextButton").click(function(){//下一页
-    currentPage++;
-    if(currentPage > 3){
-        currentPage = 3;
+    var backImg = $(".back-img");
+    if(isFlip[currentPage] == 2){
+        isFlip[currentPage] = 1;
+        $(".front-title").css('opacity',0);
+        $(".front-dialogue").css('opacity',0);
+        $(".front-img").addClass("flip");
+        backImg.removeClass("flip");
+        setTimeout(function(){
+            $(".back-title").css('opacity',1);
+            backImg.css('opacity',1);
+        },1000);
+        setTimeout(function(){
+            $(".back_1_dialogue").css('opacity',1);
+        },1500);
+        setTimeout(function(){
+            $(".back_2_dialogue").css('opacity',1);
+        },2000);
         return;
     }
-    pageTurn();
+    currentPage++;
+    if(currentPage > 4){
+        currentPage = 4;
+        return;
+    }
+    pageTurn(currentPage);
 });
 $("#prevButton").click(function() {
+    if(isFlip[currentPage] == 1){
+        $(".back-title").css('opacity',0);
+        $(".back_1_dialogue").css('opacity',0);
+        $(".back_2_dialogue").css('opacity',0);
+        $(".back-img").addClass("flip");
+        $(".front-img").removeClass("flip");
+        setTimeout(function () {
+            $(".front-title").css('opacity',1);
+        },1000);
+        setTimeout(function () {
+            $(".front-dialogue").css('opacity',1);
+        },1500);
+        isFlip[currentPage] = 2;
+        return;
+    }
     currentPage--;
     if(currentPage < 0){
         currentPage = 0;
         return;
     }
-    pageTurn();
+    pageTurn(currentPage);
 })
 function showElement(currentPage) {
     switch (currentPage){
@@ -43,6 +77,18 @@ function showElement(currentPage) {
             setTimeout(function(){
                 $(".P2").addClass("scaleRotate");
             },1000);
+            break;
+        case 3:
+            setTimeout(function(){
+                $(".front-title").css('opacity',1);
+            },500);
+            setTimeout(function(){
+                $(".front-dialogue").addClass("skim-over");
+            },1000);
+            setTimeout(function(){
+                $(".front-img").css('opacity',1);
+            },500);
+            break;
     }
 }
 /*图片预加载*/
@@ -53,10 +99,12 @@ function prevImg(element){
     return img;
 }
 /*翻页*/
-function pageTurn(){
+function pageTurn(currentPage){
     currentDistance = currentPage * screenHeight;
     translateString="translate3d(0, -"+currentDistance+"px, 0)";
     transitionString = "all 1s linear";
     contentList.css({"transform":translateString,"-webkit-transform":translateString,"-webkit-transition":transitionString,"transition":transitionString})
     showElement(currentPage);
 }
+/*P3模块的动画*/
+var isFlip = [0,0,0,2,0];//用来判断点击一次发生的是在当前页面的翻转
