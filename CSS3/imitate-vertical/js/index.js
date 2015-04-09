@@ -13,15 +13,11 @@ var screenHeight = $(window).height();
 var transitionString = "";
 $("#nextButton").click(function(){//下一页
     currentPage++;
-    if(currentPage > 2){
-        currentPage = 2;
+    if(currentPage > 3){
+        currentPage = 3;
         return;
     }
-    currentDistance = currentPage * screenHeight;
-    translateString="translate3d(0, -"+currentDistance+"px, 0)";
-    transitionString = "all 1s linear";
-    contentList.css({"transform":translateString,"-webkit-transform":translateString,"-webkit-transition":transitionString,"transition":transitionString})
-    showElement(currentPage);
+    pageTurn();
 });
 $("#prevButton").click(function() {
     currentPage--;
@@ -29,11 +25,7 @@ $("#prevButton").click(function() {
         currentPage = 0;
         return;
     }
-    currentDistance = currentPage * screenHeight;
-    translateString="translate3d(0, -"+currentDistance+"px, 0)";
-    transitionString = "all 1s linear";
-    contentList.css({"transform":translateString,"-webkit-transform":translateString,"-webkit-transition":transitionString,"transition":transitionString})
-    showElement(currentPage);
+    pageTurn();
 })
 function showElement(currentPage) {
     switch (currentPage){
@@ -52,4 +44,19 @@ function showElement(currentPage) {
                 $(".P2").addClass("scaleRotate");
             },1000);
     }
+}
+/*图片预加载*/
+function prevImg(element){
+    var imgSrc = $(element).src;
+    var img = new Image();
+    img.src = imgSrc;
+    return img;
+}
+/*翻页*/
+function pageTurn(){
+    currentDistance = currentPage * screenHeight;
+    translateString="translate3d(0, -"+currentDistance+"px, 0)";
+    transitionString = "all 1s linear";
+    contentList.css({"transform":translateString,"-webkit-transform":translateString,"-webkit-transition":transitionString,"transition":transitionString})
+    showElement(currentPage);
 }

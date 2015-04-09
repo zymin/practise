@@ -1,0 +1,58 @@
+/*p3中的动画*/
+/*标题*/
+.title{
+    position: absolute;
+    top: 10px;
+    left: 20px;
+}
+.front-title{
+    width: 278px;
+    height: 34px;
+    background: url("../images/P4-1.png") no-repeat -228px -37px;
+}
+.back-title{
+    width: 278px;
+    height: 34px;
+    background: url("../images/P4-1.png") no-repeat -234px 1px;
+}
+/*对话*/
+.dialogue{
+   position: absolute;
+    top: 70px;
+    left: 0;
+    z-index: 8;
+}
+.front-dialogue{
+     width: 233px;
+     height: 56px;
+     background: url("../images/P4-1.png") no-repeat 0 0;
+ }
+.back_1_dialogue{
+    width: 199px;
+    height: 44px;
+    background: url("../images/P4-1.png") no-repeat 0 -56px;
+    margin-left: 44px;
+}
+.back_2_dialogue{
+    width: 233px;
+    height: 39px;
+    background: url("../images/P4-1.png") no-repeat -37px -101px;
+    margin-top: 10px;
+}
+/*场景*/
+.scene{
+    position: absolute;
+    top: 78px;
+}
+.front-img{
+    width: 278px;
+    height: 312px;
+    background: url("../images/P4_front.png") no-repeat 0 0;
+    background-size: cover;
+}
+.back-img{
+    width: 278px;
+    height: 312px;
+    background: url("../images/P4_back.png") no-repeat 0 0;
+    background-size: cover;
+}

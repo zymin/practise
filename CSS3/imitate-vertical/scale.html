@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>css3中的scale使用</title>
+    <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <meta name="format-detection" content="telephone=no">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/P0.css">
+    <link rel="stylesheet" href="css/P1.css">
+    <link rel="stylesheet" href="css/P2.css">
+    <link rel="stylesheet" href="css/P3.css">
+</head>
+<body>
+<div class="content">
+    <div class="loading-wrap">
+        <span class="part circle"></span>
+        <span class="part circle-loading"></span>
+    </div>
+    <ul class="content-list">
+        <!--<li class="content-li">-->
+            <!--<div class="page part P0">-->
+                <!--<img src="images/P1-1.png">-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li class="content-li">-->
+            <!--<div class="page part P1">-->
+                <!--<img src="images/P2-1.png">-->
+            <!--</div>-->
+        <!--</li>-->
+        <!--<li class="content-li">-->
+            <!--<div class="page part P2">-->
+                <!--<img src="images/P3-1.png">-->
+            <!--</div>-->
+        <!--</li>-->
+        <li class="content-li">
+            <div class="page part P3">
+                <div class="title">
+                    <div class="front-title"></div>
+                    <div class="back-title"></div>
+                </div>
+                <div class="dialogue">
+                    <div class="front-dialogue"></div>
+                    <div class="back-dialogue">
+                        <div class="back_1_dialogue"></div>
+                        <div class="back_2_dialogue"></div>
+                    </div>
+                </div>
+                <div class="scene">
+                    <div class="front-img"></div>
+                    <div class="back-img"></div>
+                </div>
+            </div>
+        </li>
+    </ul>
+    <div class="loading part">
+        <img src="images/white-arrow.png">
+    </div>
+    <div class="part prevNextPage">
+        <button id="prevButton">上一页</button>
+        &nbsp;&nbsp;&nbsp;&nbsp;<button id="nextButton">下一页</button>
+    </div>
+</div>
+</body>
+<script src="js/zepto.1.1.4.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    window.onresize = function () {
+        $(".content-li").each(function () {
+            $(this).css("height", $(window).height())
+        }), screenHeight = $(window).height()
+    }, setTimeout(function () {
+        $(window).resize()
+    }, 1e3);
+</script>
+</html>
