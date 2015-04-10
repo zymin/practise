@@ -12,16 +12,15 @@ var currentPage = 0;
 var screenHeight = $(window).height();
 var transitionString = "";
 $("#nextButton").click(function(){//下一页
-    var backImg = $(".back-img");
     if(isFlip[currentPage] == 2){
         isFlip[currentPage] = 1;
         $(".front-title").css('opacity',0);
         $(".front-dialogue").css('opacity',0);
         $(".front-img").addClass("flip");
-        backImg.removeClass("flip");
+        $(".back-img").css('opacity',1);
+        $(".back-img").removeClass("flip");
         setTimeout(function(){
             $(".back-title").css('opacity',1);
-            backImg.css('opacity',1);
         },1000);
         setTimeout(function(){
             $(".back_1_dialogue").css('opacity',1);
@@ -43,6 +42,7 @@ $("#prevButton").click(function() {
         $(".back-title").css('opacity',0);
         $(".back_1_dialogue").css('opacity',0);
         $(".back_2_dialogue").css('opacity',0);
+        $(".back-img").css('opacity',0);
         $(".back-img").addClass("flip");
         $(".front-img").removeClass("flip");
         setTimeout(function () {
