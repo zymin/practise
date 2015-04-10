@@ -5,7 +5,7 @@
     <title>Html5中canvas的使用</title>
     <meta name="viewport" content=" initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
     <meta name="format-detection" content="telephone=no">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css?v=1">
 </head>
 <body>
 <div class="content">
@@ -13,22 +13,22 @@
         <img src="images/loading.gif">
     </div>
     <div class="canvas-wrap">
-        <canvas id="mask">您的浏览器不支持canvas</canvas>
         <canvas id="lottery">您的浏览器不支持canvas</canvas>
+        <canvas id="mask">您的浏览器不支持canvas</canvas>
     </div>
 </div>
 </body>
 <script src="js/zepto.1.1.4.min.js"></script>
 <script src="js/index.js"></script>
 <script>
-    //屏幕伸缩自适应
-    window.onresize = function () {
-        clientWidth = document.documentElement.clientWidth;
-        clientHeight = document.documentElement.clientHeight;
-        resizeCanvas(maskContent,clientWidth,clientHeight);
-        maskCtx.drawImage(img,0,0,clientWidth,clientHeight);
-    }, setTimeout(function () {
-        $(window).resize()
-    }, 1e3);
+//    屏幕伸缩自适应
+//    window.onresize = function () {
+//        clientWidth = document.documentElement.clientWidth;
+//        clientHeight = document.documentElement.clientHeight;
+//        resizeCanvas(maskContent,clientWidth,clientHeight);
+//        maskCtx.drawImage(img,0,0,clientWidth,clientHeight);
+//    }, setTimeout(function () {
+//        $(window).resize()
+//    }, 1e3);
 </script>
 </html>

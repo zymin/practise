@@ -91,7 +91,7 @@ var coverUrl = '';
 var endUrl = null;
 if(true == is_show_expire){
 }else{
-    coverUrl = 'images/slowly-music.jpg';
+    coverUrl = 'images/mask.jpg';
     endUrl = '';
 }
 var config = {

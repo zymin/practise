@@ -51,21 +51,19 @@
         lotteryCtx.drawImage(img,0,0);
         lotteryCtx.globalCompositeOperation = 'destination-out';//在与源不重叠的区域上保留目标。其他部分都变成透明的；先绘制的是目标即：mask
     };
-    img.src = "slowly-music.jpg";
+    img.src = "images/slowly-music.jpg";
 
     /*开奖图片*/
     var bottomLottery = document.getElementById("bottom-lottery");
     var bottomLotteryCtx = bottomLottery.getContext("2d");
     var imgBottom = new Image();
-    imgBottom.src = "busy.jpg";
+    imgBottom.src = "images/busy.jpg";
     imgBottom.onload = function(){
         bottomLotteryCtx.drawImage(imgBottom,0,0);
     }
     var isTouch = false;
 //    绑定事件
     function drawMove(x,y){
-//        alert(123)
-//        e.preventDefault();
         var device = (/android|webos|iphone|ipad|ipod|blackberry|iemobile|opera mini/i.test(navigator.userAgent.toLowerCase()));
             if(isTouch == true){
                 lotteryCtx.beginPath();
