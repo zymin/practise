@@ -1,0 +1,52 @@
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: "Helvetica Neue", Helvetica, Arial, "Hiragino Sans GB", "Hiragino Sans GB W3", "WenQuanYi Micro Hei", "Microsoft YaHei UI", "Microsoft YaHei", sans-serif;
+}
+ul,ol{
+    list-style-type: none;
+}
+a{
+    text-decoration: none;
+}
+.header{
+    height: 60px;
+    text-align: center;
+    line-height: 60px;
+    background-color: rgba(0,0,0,0.8);
+    color: #fff;
+}
+.navbar-title{
+    font-size: 22px;
+}
+.active{
+    background-color: #3a9ac4;
+}
+.index{
+    background-color: #3a9ac4;
+}
+.small-title{
+    font-size: 15px;
+    color: #3a9ac4;
+    cursor: pointer;
+}
+.index-intro li{
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 50px;
+    color: #fff;
+}
+.look-more{
+    width: 200px;
+    height: 50px;
+    margin: 0;
+    text-align: center;
+    line-height: 50px;
+    background-color: rgba(0,0,0,0.3);
+    color: #fff;
+}
+.index-footer{
+    height: 70px;
+    background-color: rgba(0,0,0,0.2);
+    margin-top: 40px;
+}

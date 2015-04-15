@@ -50,11 +50,11 @@ $(document).ready(function () {
         })
     }), e = localStorage ? localStorage.getItem("timer") : "", e = e ? e : $getCookie("spring_pv"), f = "2015央视春晚主题发布!", g = "2015央视春晚邀您一起参与全民“家和万事兴”行动", h = param(), i = "http://yao.qq.com/tv/entry?redirect_uri={#redirect_uri#}&cb41faa22e731e9b={#cb41faa22e731e9b#}&t=" + new Date, i = i.replace("{#redirect_uri#}", encodeURIComponent("http://yaotv.qq.com/shake_tv/proj/spring_festival/my-demo.html")).replace("{#cb41faa22e731e9b#}", h.cb41faa22e731e9b), e && !isNaN(parseInt(e)) ? ($(".p6__number").html(e), $(".part.p6__p").show(), f = "春晚“家和万事兴”行动,我是第" + e + "位参与者!") : $.ajax({type: "GET", url: "http://yao.qq.com/tv/pv?pageid=1001", dataType: "jsonp", success: function (a) {
         0 == a["errorCode"] && (a = a["data"], isNaN(parseInt(a["pv"])) || ($(".p6__number").html(a["pv"]), $(".part.p6__p").show(), f = "春晚“家和万事兴”行动,我是第" + a["pv"] + "位参与者!", $(".p5__print-wrap").on("tap", function () {
-            localStorage && localStorage.setItem("timer", a["pv"]), $setCookie("spring_pv", a["pv"], 7200), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/img/thumb-logo.jpg", f, g, i)
+            localStorage && localStorage.setItem("timer", a["pv"]), $setCookie("spring_pv", a["pv"], 7200), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/images/thumb-logo.jpg", f, g, i)
         }), $(".p5__print-wrap").on("longTap", function () {
-            localStorage && localStorage.setItem("timer", a["pv"]), $setCookie("spring_pv", a["pv"], 7200), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/img/thumb-logo.jpg", f, g, i)
+            localStorage && localStorage.setItem("timer", a["pv"]), $setCookie("spring_pv", a["pv"], 7200), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/images/thumb-logo.jpg", f, g, i)
         })))
-    }}), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/img/thumb-logo.jpg", f, g, i)
+    }}), shaketv.wxShare("http://3glogo.gtimg.com/wxgc/_events/20141120-spring-festival/images/thumb-logo.jpg", f, g, i)
 }), window.onresize = function () {
     $(".content-li").each(function () {
         $(this).css("height", $(window).height())

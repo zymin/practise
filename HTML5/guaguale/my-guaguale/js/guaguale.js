@@ -202,8 +202,8 @@ Lottery.prototype = {
 
 window.onload = function () {
 //    alert(Lottery.prototype instanceof Object);
-    var lottery = new Lottery('lotteryContainer', '../my-guaguale/images/mask.jpg', 'image', 300, 100, drawPercent);
-    lottery.init('../my-guaguale/images/busy.jpg', 'image');//百度图片：width=270px;height=129px
+    var lottery = new Lottery('lotteryContainer', '../my-guaguale/image/mask.jpg', 'image', 300, 100, drawPercent);
+    lottery.init('../my-guaguale/image/busy.jpg', 'image');//百度图片：width=270px;height=129px
 
     document.getElementById('freshBtn').onclick = function() {
         drawPercentNode.innerHTML = '0%';

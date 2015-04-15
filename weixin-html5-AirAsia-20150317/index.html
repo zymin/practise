@@ -529,14 +529,14 @@ function initWeixin(){
 //
 //        // 5 图片接口
 //        // 5.1 拍照、本地选图
-//        var images = {
+//        var image = {
 //            localId: [],
 //            serverId: []
 //        };
 //        document.querySelector('#chooseImage').onclick = function () {
 //            wx.chooseImage({
 //                success: function (res) {
-//                    images.localId = res.localIds;
+//                    image.localId = res.localIds;
 //                    alert('已选择 ' + res.localIds.length + ' 张图片');
 //                }
 //            });
@@ -556,19 +556,19 @@ function initWeixin(){
 //
 //        // 5.3 上传图片
 //        document.querySelector('#uploadImage').onclick = function () {
-//            if (images.localId.length == 0) {
+//            if (image.localId.length == 0) {
 //                alert('请先使用 chooseImage 接口选择图片');
 //                return;
 //            }
-//            var i = 0, length = images.localId.length;
-//            images.serverId = [];
+//            var i = 0, length = image.localId.length;
+//            image.serverId = [];
 //            function upload() {
 //                wx.uploadImage({
-//                    localId: images.localId[i],
+//                    localId: image.localId[i],
 //                    success: function (res) {
 //                        i++;
 //                        alert('已上传：' + i + '/' + length);
-//                        images.serverId.push(res.serverId);
+//                        image.serverId.push(res.serverId);
 //                        if (i < length) {
 //                            upload();
 //                        }
@@ -583,19 +583,19 @@ function initWeixin(){
 //
 //        // 5.4 下载图片
 //        document.querySelector('#downloadImage').onclick = function () {
-//            if (images.serverId.length === 0) {
+//            if (image.serverId.length === 0) {
 //                alert('请先使用 uploadImage 上传图片');
 //                return;
 //            }
-//            var i = 0, length = images.serverId.length;
-//            images.localId = [];
+//            var i = 0, length = image.serverId.length;
+//            image.localId = [];
 //            function download() {
 //                wx.downloadImage({
-//                    serverId: images.serverId[i],
+//                    serverId: image.serverId[i],
 //                    success: function (res) {
 //                        i++;
 //                        alert('已下载：' + i + '/' + length);
-//                        images.localId.push(res.localId);
+//                        image.localId.push(res.localId);
 //                        if (i < length) {
 //                            download();
 //                        }

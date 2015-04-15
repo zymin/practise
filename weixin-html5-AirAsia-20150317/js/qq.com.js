@@ -186,7 +186,7 @@
     }
 
     function C(c) {
-        var a = {9: "\u817e\u8baf\u5206\u6790", 10: "\u7f51\u7ad9\u7edf\u8ba1", df: '<images src="' + (("https:" == document.location.protocol ? "https:" : "http:") + "//tajs.qq.com/icon/toss_" + c + ".gif") + '" border="0" />'};
+        var a = {9: "\u817e\u8baf\u5206\u6790", 10: "\u7f51\u7ad9\u7edf\u8ba1", df: '<image src="' + (("https:" == document.location.protocol ? "https:" : "http:") + "//tajs.qq.com/icon/toss_" + c + ".gif") + '" border="0" />'};
         document.write(['<a href="http://ta.qq.com?ADTAG=FROUM.FOOTER.CLICK.ICON" title="\u817e\u8baf\u5206\u6790" target="_blank">', a[c] || a.df, "</a>"].join(""))
     }
 

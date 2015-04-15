@@ -13,12 +13,12 @@ img.onload = function(){
     maskCtx.drawImage(img,0,0,clientWidth,clientHeight);
     maskCtx.globalCompositeOperation = 'destination-out';
 };
-img.src = "images/mask.jpg";
+img.src = "image/mask.jpg";
 //画中奖画面
 var lotteryContent = document.getElementById("lottery");
 var lotteryCtx = lotteryContent.getContext('2d');
 var lotteryImg = new Image();
-lotteryImg.src = "images/busy.jpg";
+lotteryImg.src = "image/busy.jpg";
 lotteryImg.onload = function(){
     resizeCanvas(lotteryContent,clientWidth,clientHeight);
     lotteryCtx.drawImage(lotteryImg,0,0,clientWidth,clientHeight);

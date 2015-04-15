@@ -101,7 +101,7 @@ $(document).ready(function () {
             clearTimeout(timer);
         }, 600);
     });
-    var imgUrl = 'http://sunnyzhen.github.io/demo/calendar/images/calendar.jpg';
+    var imgUrl = 'http://sunnyzhen.github.io/demo/calendar/image/calendar.jpg';
     var lineLink = location.href;
     var descContent = "腾讯2015校园招聘火热启动！送你一本小鹅历，助你校招大丰收！";
     var shareTitle = document.title;
