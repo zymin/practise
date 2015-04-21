@@ -1,0 +1,113 @@
+.head-new-car{
+    margin-top: 50px;
+    background-color: #317fc2;
+    color: #fff;
+    line-height: 50px;
+}
+.head-new-car a:link{
+    color: #fff;
+}
+.head-new-car a{
+    color: #fff;
+    font-size: 18px;
+    text-align: left;
+}
+.head-new-car h3{
+    text-align: center;
+    margin-top: 10px;
+    font-size: 20px;
+}
+/*浏览新车*/
+.browse-new-car{
+    margin-top: 5px;
+    background-color: #f1f2f3;
+}
+.browse-new-car h2{
+    border-top: 1px solid #ccc;
+    border-bottom: 1px solid #ccc;
+    font-size: 18px;
+    border-width: 1px 0;
+    line-height: 35px;
+    font-weight: bold;
+    padding: 0 0 0 12px;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.car-brand{
+    overflow: auto;
+}
+.swipe-carousel-body{
+    width: 1157px;
+    height: 82px;
+}
+.swipe-carousel-body li{
+    width: 89px;
+    float: left;
+    border-style: none solid solid none;
+    border-color: #dddddd;
+    border-width: 1px;
+    padding: 7px;
+}
+.swipe-carousel-body li a{
+    display: inline-block;
+    width: 74px;
+    height: 62px;
+}
+.swipe-carousel-body li .car-brand1{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px 0;
+}
+.swipe-carousel-body li .car-brand2{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -121px 0;
+}
+.swipe-carousel-body li .car-brand3{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -236px 0;
+}
+.swipe-carousel-body li .car-brand4{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -351px 0;
+}
+.swipe-carousel-body li .car-brand5{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -466px 0;
+}
+.swipe-carousel-body li .car-brand6{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -577px 0;
+}
+.swipe-carousel-body li .car-brand7{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -692px 0;
+}
+.swipe-carousel-body li .car-brand8{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -807px 0;
+}
+.swipe-carousel-body li .car-brand9{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px -87px;
+}
+.swipe-carousel-body li .car-brand10{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px -172px;
+}
+.swipe-carousel-body li .car-brand11{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px -259px;
+}
+.swipe-carousel-body li .car-brand12{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px -340px;
+}
+.swipe-carousel-body li .car-brand13{
+    background: url("../../images/manufacturer-logos.png") no-repeat;
+    background-position: -6px -427px;
+}
+.view-all{
+    text-align: right;
+    line-height: 40px;
+    font-size: 16px;
+}
+.

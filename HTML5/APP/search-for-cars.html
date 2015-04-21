@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>Search for Cars</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style/style.css">
+    <link rel="stylesheet" href="css/style/search-cars.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!--公用head-->
+    <header class="row head">
+        <div class="col-xs-2 pull_left">
+            <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+        </div>
+        <div class="col-xs-8">
+            <h3>来 福 乐</h3>
+        </div>
+        <div class="col-xs-2 pull_right">
+            <a href="#"><i class="glyphicon glyphicon-th"></i></a>
+        </div>
+    </header>
+    <!--主要内容----搜索条件-->
+    <section class="row">
+        <div class="col-xs-12 advertise">
+            <span class="disabled">Advertisement</span>
+            <div class="col-xs-12">
+                <img src="images/search-cars.gif">
+            </div>
+        </div>
+        <div class="col-xs-12 search-list">
+            <ul class="list-group">
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>广告类型</li>
+            </ul>
+            <ul class="list-group">
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>制造</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>制作地点</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>邮政编码</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>销量</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>关键字</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>合格证 / 批准</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>只显示汽车</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>车身类型</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>价格</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>生产年限</li>
+                <li class="list-group-item"><span class="badge">选择<i class="glyphicon glyphicon-chevron-right"></i></span>转动装置</li>
+                <div id="hidden-search-list" style="display: none">
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Kilometres</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Colour</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Fuel Type</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Fuel Economy</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Drive Type</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Lifestyle</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Seats</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Doors</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Engine Size(CCs)</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Cylinders</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Engine Type</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Induction / Turbo</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Power(kW)</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Towing(Braked)</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>ANCAP Safety Rating</li>
+                    <li class="list-group-item"><span class="badge">Any<i class="glyphicon glyphicon-chevron-right"></i></span>Green Star Rating</li>
+                </div>
+                <li class="list-group-item" id="show-options-plus"><i class="glyphicon glyphicon-plus-sign"></i>&nbsp;&nbsp;<a href="#">显示所有选项</a></li>
+                <li class="list-group-item" id="show-options-minus" style="display:none"><i class="glyphicon glyphicon-minus-sign"></i>&nbsp;&nbsp;<a href="#">显示所有选项</a></li>
+            </ul>
+        </div>
+    </section>
+    <!--footer搜索-->
+    <footer class="row">
+        <div class="footer-show">
+            <a href="#" class="search-btn">展示209919辆车</a>
+        </div>
+    </footer>
+    <!--导航和modal-->
+    <nav class="row">
+        <div id="left-nav">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="head-portrait"><i class="glyphicon glyphicon-user"></i></span>
+                    <span class="login-sign"><a href="#">登 录 / 注 册</a></span>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="nav-home">
+                            <a href="#">首 页</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span class="disabled">搜 索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">促销车</a>
+                                <a href="#" class="nav-search-content-list">新车展览</a>
+                                <a href="#" class="nav-search-content-list">特惠车</a>
+                                <a href="#" class="nav-search-content-list">帮我选择</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                                <span class="disabled">会员中心</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">汽车仪表</a>
+                                <a href="#" class="nav-search-content-list">保存的汽车</a>
+                                <a href="#" class="nav-search-content-list">保存的搜索</a>
+                                <a href="#" class="nav-search-content-list">你的车库</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-usd"></i>
+                                <span class="disabled">卖出你的车</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">创建一个广告</a>
+                                <a href="#" class="nav-search-content-list">管理我的广告</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-book"></i>
+                                <span class="disabled">再次搜索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">新 闻 & 评 述</a>
+                                <a href="#" class="nav-search-content-list">视 频</a>
+                                <a href="#" class="nav-search-content-list">评 估</a>
+                                <a href="#" class="nav-search-content-list">找个经商者</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-th"></i>
+                                <span class="disabled">更 多</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">反 馈</a>
+                                <a href="#" class="nav-search-content-list">联 系</a>
+                                <a href="#" class="nav-search-content-list">条 款 & 条 件</a>
+                                <a href="#" class="nav-search-content-list">私 人</a>
+                                <a href="#" class="nav-search-content-list">经典网站</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right-nav">
+            <div class="panel panel-default">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <span class="disabled nav-home">首 页</span>
+                        <a href="#" class="nav-search-content-list">反 馈</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="modal-panel" style="display: none"></div>
+</div>
+</body>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</html>

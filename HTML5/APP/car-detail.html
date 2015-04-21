@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>车的详情</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style/style.css">
+    <link rel="stylesheet" href="css/style/car-detail.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!--公用head-->
+    <header class="row head">
+        <div class="col-xs-2 pull_left">
+            <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+        </div>
+        <div class="col-xs-8">
+            <h3>来 福 乐</h3>
+        </div>
+        <div class="col-xs-2 pull_right">
+            <a href="#"><i class="glyphicon glyphicon-th"></i></a>
+        </div>
+    </header>
+    <!--导航和modal-->
+    <nav class="row">
+        <div id="left-nav">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="head-portrait"><i class="glyphicon glyphicon-user"></i></span>
+                    <span class="login-sign"><a href="#">登 录 / 注 册</a></span>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="nav-home">
+                            <a href="#">首 页</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span class="disabled">搜 索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">促销车</a>
+                                <a href="#" class="nav-search-content-list">新车展览</a>
+                                <a href="#" class="nav-search-content-list">特惠车</a>
+                                <a href="#" class="nav-search-content-list">帮我选择</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                                <span class="disabled">会员中心</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">汽车仪表</a>
+                                <a href="#" class="nav-search-content-list">保存的汽车</a>
+                                <a href="#" class="nav-search-content-list">保存的搜索</a>
+                                <a href="#" class="nav-search-content-list">你的车库</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-usd"></i>
+                                <span class="disabled">卖出你的车</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">创建一个广告</a>
+                                <a href="#" class="nav-search-content-list">管理我的广告</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-book"></i>
+                                <span class="disabled">再次搜索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">新 闻 & 评 述</a>
+                                <a href="#" class="nav-search-content-list">视 频</a>
+                                <a href="#" class="nav-search-content-list">评 估</a>
+                                <a href="#" class="nav-search-content-list">找个经商者</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-th"></i>
+                                <span class="disabled">更 多</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">反 馈</a>
+                                <a href="#" class="nav-search-content-list">联 系</a>
+                                <a href="#" class="nav-search-content-list">条 款 & 条 件</a>
+                                <a href="#" class="nav-search-content-list">私 人</a>
+                                <a href="#" class="nav-search-content-list">经典网站</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right-nav">
+            <div class="panel panel-default">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <span class="disabled nav-home">首 页</span>
+                        <a href="#" class="nav-search-content-list">反 馈</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="modal-panel" style="display: none"></div>
+    <!---->
+    <section class="row" style="position: relative">
+        <div id="car-img">
+            <div class="img-items">
+                <img src="images/car-img.jpg">
+            </div>
+            <div class="img-items">
+                <img src="images/car-img1.jpg">
+            </div>
+            <div class="img-items">
+                <img src="images/car-img2.jpg">
+            </div>
+        </div>
+        <div class="img-account">
+            <span class="current-img-account">1</span>&nbsp;of&nbsp;<span class="all-img-account">4</span>
+        </div>
+    </section>
+    <section class="row">
+        <div class="col-xs-12" style="margin-top: 10px">
+            <h4>Toroidion 1兆瓦的超级汽车了</h4>
+        </div>
+        <div class="col-xs-12 advertise car-detail-advertise">
+            <span class="disabled">Advertisement</span>
+            <div class="col-xs-12">
+                <img src="images/search-cars.gif">
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <p>
+                Toroidion 1 mw不是你的典型的超级汽车。它不仅在电力运行纯粹,因此真正零排放的跑车在许多国家,但它也看起来像什么。
+            </p>
+            <p>
+                这可能适合潜在买家三通。
+            </p>
+            <p>
+                首次显示在顶部品牌汽车事件在摩纳哥,与更传统的超级汽车的喜欢就像Automobili高级跑车运动2500 GT,Toroidion 1 mw抢夺世界上最强大的标题可以生产电动车从当前的国王——100万美元Rimac ConceptOne。那辆车泵800千瓦和3800 nm的扭矩,但这芬兰创建ups的赌注。
+            </p>
+            <p>
+                开发、设计和建造在芬兰,车辆的私生子初创公司的CEO,帕斯Pennanen,和泵1000千瓦的电力,或者一个兆瓦-因此,1兆瓦的名字。
+            </p>
+            <p>
+                1000000瓦的如果你想削减它的另一种方法,或1341马力。
+            </p>
+            <p>
+                目前还不清楚有多少扭矩Toroidion MW1力量通过其动力传动系统,但与1000千瓦丝锥Rimac可能产生类似的转折,约4000海里。Rimac“大战”从0 - 100 km / h在2.8秒,最高时速305公里/小时,供参考。
+            </p>
+            <p>
+                除了极大的输出功率,专业battery-swap系统启用扩展练习场和其独特的设计,Toroidion是保持汽车的细节保密,如它的重量、插件收费时代,电动机类型,电池类型、制动大小等等。
+            </p>
+            <p>
+                和最重要的问题——成本——可能还不清楚其创造者,但肯定地说,它将成本比特斯拉型号S公平一点。
+            </p>
+        </div>
+        <div class="col-xs-12 car-detail-label">
+            <span class="car-detail-author">by</span>
+            <span class="car-detail-date">2015-04-21</span>
+        </div>
+    </section>
+    <footer class="row">
+        <div class="col-xs-12" id="comment-content"  style="display: none">
+            <ul>
+                <li class="tab-conversation active">
+                    <a href="#">7 条评论</a>
+                </li>
+                <li class="tab-conversation">
+                    <a href="#">Motoring.com.au</a>
+                </li>
+                <li class="tab-conversation">
+                    <span><i class="glyphicon glyphicon-comment"></i></span>
+                    <a href="#">登录</a>
+                    <i class="caret"></i>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            <hr>
+            <ul>
+                <li class="tab-conversation">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-heart"></i>&nbsp;&nbsp;推 荐
+                    </a>
+                </li>
+                <li class="tab-conversation">
+                    <a href="#">
+                        <i class="glyphicon glyphicon-share"></i>&nbsp;&nbsp;分 享
+                    </a>
+                </li>
+                <li class="tab-conversation">
+                    <a href="#">最近评论</a>
+                    <i class="caret"></i>
+                </li>
+            </ul>
+            <div class="clearfix"></div>
+            <!--评论中的对话-->
+            <div id="conversation">
+                <div class="post-content">
+                    <div class="avatar">
+                        <div class="user">
+                            <img src="images/comment-portraits.png">
+                        </div>
+                    </div>
+                    <div class="post-body">
+                        <div class="post-body-content">
+                            <header>
+                                <span class="comment-author">chewer</span>
+                                <span class="post-meta">•</span>
+                                <span class="post-meta"> 5小时前</span>
+                            </header>
+                            <section>
+                                <p>I can't even imagine what around 4000Nm would feel like!Just like the Koenigsegg CCX that TopGear shoehorned a spoiler to so that it could complete a flying lap of their test track! Unless this one does in fact have a retractable wing..</p>
+                            </section>
+                            <footer>
+                                <span class="post-meta comment-replay">回复</span>
+                                <span class="post-meta">•</span>
+                                <span class="post-meta comment-share">分享</span>
+                            </footer>
+                        </div>
+                    </div>
+                </div>
+                <div class="clearfix"></div>
+            </div>
+        </div>
+        <div class="col-xs-12" id="car-detail-comments-show">
+            <div class="show-hide-comment active">
+                <span>Show Comments</span>
+            </div>
+        </div>
+        <div class="col-xs-12" id="car-detail-comments-hidden" style="display: none">
+            <div class="show-hide-comment active">
+                <span>Hide Comments</span>
+            </div>
+        </div>
+        <div class="clearfix"></div>
+        <div class="car-detail-footerBg"></div>
+    </footer>
+</div>
+</body>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+<script>
+    var screenWidth = $(window).width();
+    $("#car-img").css({"width":screenWidth*3});
+    $(".img-items").css({"width":screenWidth});
+</script>
+</html>

@@ -1,0 +1,113 @@
+#car-img{
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+#car-img .img-items{
+    float: left;
+}
+#car-img .img-items img{
+    width: 100%;
+    height: auto;
+}
+.img-account{
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    width: 50px;
+    height: 20px;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,.8);
+    color: #fff;
+    text-align: center;
+}
+.car-detail-advertise{
+    margin-top: 10px;
+    padding-bottom: 20px;
+    padding-top: 0;
+}
+.car-detail-label{
+    font-size: 12px;
+    color: #999;
+    margin-bottom: 20px;
+}
+.car-detail-label .car-detail-author{
+    float: left;
+}
+.car-detail-label .car-detail-date{
+    float: right;
+}
+.show-hide-comment{
+    border-bottom: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    cursor: pointer;
+    background-color: #fff;
+}
+.car-detail-footerBg{
+    width: 100%;
+    height: 50px;
+    margin-top: 30px;
+    background-color: #e8e8e8;
+}
+/*评论的样式多点，从此开始*/
+#comment-content{
+    width: 100%;
+}
+#comment-content ul{
+
+}
+#comment-content ul li{
+    width: 75px;
+    float: left;
+}
+#comment-content ul li:first-child{
+    /*padding-right: 50px;*/
+}
+#comment-content ul li:last-child{
+    float: right;
+}
+/*选择当前样式时表强调*/
+.active a{
+    font-weight: 700;
+    font-size: 16px;
+    color: #000;
+    border-bottom: 2px solid #555;
+    padding-bottom: 21px;
+}
+/*评论中对话的样式*/
+#conversation{
+    width: 100%;
+    margin-top: 10px;
+}
+#conversation .avatar{
+    margin-right: 12px;
+    float: left;
+    margin-top: 8px;
+}
+#conversation .post-body{
+    height: auto;
+    margin-top: 10px;
+}
+#conversation .post-content{
+    margin-top: 10px;
+}
+#conversation .avatar img{
+    width: 48px;
+    height: 48px;
+    display: block;
+    border-radius: 3px;
+}
+#conversation .post-content .post-body p{
+    margin: 3px 0 3px 0;
+}
+#conversation .post-meta{
+    color: rgba(0,39,59,.35);
+}
