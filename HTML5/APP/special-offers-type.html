@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>特别优惠中同类别车的展示</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/bootstrap-theme.min.css">
+    <link rel="stylesheet" href="css/style/style.css">
+    <link rel="stylesheet" href="css/style/special-offer-type.css">
+</head>
+<body>
+<div class="container-fluid">
+    <!--公用head-->
+    <header class="row head">
+        <div class="col-xs-2 pull_left">
+            <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
+        </div>
+        <div class="col-xs-8">
+            <h3>来 福 乐</h3>
+        </div>
+        <div class="col-xs-2 pull_right">
+            <a href="#"><i class="glyphicon glyphicon-th"></i></a>
+        </div>
+    </header>
+    <!--导航和modal-->
+    <nav class="row">
+        <div id="left-nav">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <span class="head-portrait"><i class="glyphicon glyphicon-user"></i></span>
+                    <span class="login-sign"><a href="#">登 录 / 注 册</a></span>
+                </div>
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <div class="nav-home">
+                            <a href="#">首 页</a>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-search"></i>
+                                <span class="disabled">搜 索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">促销车</a>
+                                <a href="#" class="nav-search-content-list">新车展览</a>
+                                <a href="#" class="nav-search-content-list">特惠车</a>
+                                <a href="#" class="nav-search-content-list">帮我选择</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-star-empty"></i>
+                                <span class="disabled">会员中心</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">汽车仪表</a>
+                                <a href="#" class="nav-search-content-list">保存的汽车</a>
+                                <a href="#" class="nav-search-content-list">保存的搜索</a>
+                                <a href="#" class="nav-search-content-list">你的车库</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-usd"></i>
+                                <span class="disabled">卖出你的车</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">创建一个广告</a>
+                                <a href="#" class="nav-search-content-list">管理我的广告</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon glyphicon-book"></i>
+                                <span class="disabled">再次搜索</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">新 闻 & 评 述</a>
+                                <a href="#" class="nav-search-content-list">视 频</a>
+                                <a href="#" class="nav-search-content-list">评 估</a>
+                                <a href="#" class="nav-search-content-list">找个经商者</a>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="list-group-item">
+                        <div class="nav-search">
+                            <div class="nav-search-title">
+                                <i class="glyphicon glyphicon-th"></i>
+                                <span class="disabled">更 多</span>
+                            </div>
+                            <div class="nav-search-content">
+                                <a href="#" class="nav-search-content-list">反 馈</a>
+                                <a href="#" class="nav-search-content-list">联 系</a>
+                                <a href="#" class="nav-search-content-list">条 款 & 条 件</a>
+                                <a href="#" class="nav-search-content-list">私 人</a>
+                                <a href="#" class="nav-search-content-list">经典网站</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div id="right-nav">
+            <div class="panel panel-default">
+                <ul class="list-group">
+                    <li class="list-group-item">
+                        <i class="glyphicon glyphicon-search"></i>
+                        <span class="disabled nav-home">首 页</span>
+                        <a href="#" class="nav-search-content-list">反 馈</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <div id="modal-panel" style="display: none"></div>
+    <section class="row">
+        <div class="col-xs-12 show-car-count">
+            <span>显示1到20的351辆汽车</span>
+        </div>
+    </section>
+    <article class="row">
+        <div class="col-xs-12 special-offer-detail-bg">
+            <a class="special-offer-detail-content" href="special-offer-detail.html">
+                <h5>特点</h5>
+                <div style="position: relative">
+                    <img src="images/special-offer-detail.jpg">
+                    <div class="img-account" style="bottom: 50px">
+                        <span class="current-img-account"><i class="glyphicon glyphicon-camera"></i></span>&nbsp;<span class="all-img-account">20</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h4>2014年起亚力拓乌兰巴托</h4>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">4cyl 1.4L</li>
+                        <li class="car-feature">Automatic</li>
+                    </ul>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">Hatch</li>
+                        <li class="car-feature">3 km</li>
+                    </ul>
+                    <div class="col-xs-4" style="text-align: right">
+                        <span class="price-value">$16,490</span><br>
+                        <span class="drive-away">Drive Away</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="panel-body-footer">
+                        <span class="special-small-tip">Special Offer</span>
+                        <span class="special-distance">Distance from me?</span>
+                    </div>
+                </div>
+            </a>
+            <div class="special-panel-footer">
+                <span><a href="special-offer-detail.html">New Car: In Stock</a></span>
+                <div class="store-car">QLD&nbsp;&nbsp;&nbsp;<a href="#"><i class="glyphicon glyphicon-star"></i></a></div>
+            </div>
+        </div>
+        <div class="col-xs-12 special-offer-detail-bg">
+            <a class="special-offer-detail-content" href="special-offer-detail.html">
+                <h5>特点</h5>
+                <div style="position: relative">
+                    <img src="images/special-offer-detail.jpg">
+                    <div class="img-account" style="bottom: 50px">
+                        <span class="current-img-account"><i class="glyphicon glyphicon-camera"></i></span>&nbsp;<span class="all-img-account">20</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h4>2014年起亚力拓乌兰巴托</h4>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">4cyl 1.4L</li>
+                        <li class="car-feature">Automatic</li>
+                    </ul>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">Hatch</li>
+                        <li class="car-feature">3 km</li>
+                    </ul>
+                    <div class="col-xs-4" style="text-align: right">
+                        <span class="price-value">$16,490</span><br>
+                        <span class="drive-away">Drive Away</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="panel-body-footer">
+                        <span class="special-small-tip">Special Offer</span>
+                        <span class="special-distance">Distance from me?</span>
+                    </div>
+                </div>
+            </a>
+            <div class="special-panel-footer">
+                <span><a href="special-offer-detail.html">New Car: In Stock</a></span>
+                <div class="store-car">QLD&nbsp;&nbsp;&nbsp;<a href="#"><i class="glyphicon glyphicon-star"></i></a></div>
+            </div>
+        </div>
+        <div class="col-xs-12 special-offer-detail-bg">
+            <a class="special-offer-detail-content" href="special-offer-detail.html">
+                <h5>特点</h5>
+                <div style="position: relative">
+                    <img src="images/special-offer-detail.jpg">
+                    <div class="img-account" style="bottom: 50px">
+                        <span class="current-img-account"><i class="glyphicon glyphicon-camera"></i></span>&nbsp;<span class="all-img-account">20</span>
+                    </div>
+                </div>
+                <div class="panel-body">
+                    <h4>2014年起亚力拓乌兰巴托</h4>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">4cyl 1.4L</li>
+                        <li class="car-feature">Automatic</li>
+                    </ul>
+                    <ul class="col-xs-4">
+                        <li class="car-feature">Hatch</li>
+                        <li class="car-feature">3 km</li>
+                    </ul>
+                    <div class="col-xs-4" style="text-align: right">
+                        <span class="price-value">$16,490</span><br>
+                        <span class="drive-away">Drive Away</span>
+                    </div>
+                    <div class="clearfix"></div>
+                    <div class="panel-body-footer">
+                        <span class="special-small-tip">Special Offer</span>
+                        <span class="special-distance">Distance from me?</span>
+                    </div>
+                </div>
+            </a>
+            <div class="special-panel-footer">
+                <span><a href="special-offer-detail.html">New Car: In Stock</a></span>
+                <div class="store-car">QLD&nbsp;&nbsp;&nbsp;<a href="#"><i class="glyphicon glyphicon-star"></i></a></div>
+            </div>
+        </div>
+
+        <div class="col-xs-12 special-offer-detail-bg">
+            <div class="page-turn" style="text-align: center;background-color: #e8e8e8">
+                <div class="col-xs-5 prev-page"  style="background-color: #fff;padding: 0">
+                    <i class="glyphicon glyphicon-chevron-left"></i>上一页
+                </div>
+                <div class="col-xs-2"></div>
+                <div class="col-xs-5 next-page"  style="background-color: #fff;padding: 0;text-align: center">
+                    下一页<i class="glyphicon glyphicon-chevron-right"></i>
+                </div>
+            </div>
+        </div>
+        <div class="col-xs-12 special-offer-detail-bg">
+            <div class="col-xs-12 special-offer-detail-footer">
+                <p>
+                    *请注意:所有价格显示在这里解释。如果价格不包含的符号“赶走不再支付”,价格可能不包括额外的成本,如印花税和其他政府的指控。请确认价格和功能与卖方的车辆。
+                </p>
+                <p>
+                    *价格——在价格竞争和消费者明确立法,经销商必须提供你一个图时车辆价格价格表示。在这种情况下,一个单一的图无法提供价格给你在这个时间点上——例如,在一个制造商,制造商的价格可能不包括所有你必须支付的成本和费用。或者,一个商人可能无法给你一个图价格直到他们进一步的细节。如:进一步的细节在确切的车辆规格你有兴趣购买,和/或你住的州。
+                </p>
+                <p>
+                    *在车辆清单包含符号“特价”,特别提供由第三方提供,不提供或代表carsales.com有限。carsales需要没有任何责任与提供由第三方。同时carsales使用最好的努力更新任何提供反映任何变化或删除任何提供撤回,carsales不能负责的情况下提供显示carsales并不反映了不同的提供或不撤回。你应该检查和确认的条款提供之前与相关第三方代理提供的依赖。
+                </p>
+            </div>
+        </div>
+    </article>
+</div>
+</body>
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/bootstrap.min.js"></script>
+<script src="js/index.js"></script>
+</html>

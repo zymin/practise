@@ -75,3 +75,4 @@ $("#car-detail-comments-hidden").on("click",function(){
     $("#car-detail-comments-show").css({"display":"block"});
     $("#comment-content").css({"display":"none"});
 });
+//特别优惠页面中的事件

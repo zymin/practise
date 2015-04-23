@@ -1,0 +1,64 @@
+.show-car-count{
+    margin-top: 60px;
+}
+.special-offer-detail-bg{
+    background-color: #e8e8e8;
+    padding-top: 10px;
+}
+.special-offer-detail-bg .special-offer-detail-content{
+    padding-top: 10px;
+    display: block;
+}
+.special-offer-detail-bg .special-offer-detail-content img{
+    width: 100%;
+    height: auto;
+}
+.special-offer-detail-bg .special-offer-detail-content h5{
+    background-color: #004e84;
+    color: #fff;
+    margin-bottom: 0;
+    padding: 5px 0 5px 10px;
+}
+/*panel中的样式*/
+.panel-body{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.panel-body ul {
+    list-style: disc;
+    color: #666;
+}
+.panel-body .price-value{
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+.panel-body .drive-away{
+    color: #999;
+    font-size: 12px;
+}
+.panel-body-footer .special-small-tip{
+    color: #e37930;
+}
+.panel-body-footer .special-distance{
+    color: #007cb8;
+    float: right;
+}
+.special-panel-footer{
+    background-color: #fff;
+    padding: 5px;
+    color: #666;
+    border-bottom: 1px solid #d1d1d1;
+}
+.special-panel-footer .store-car{
+    float: right;
+}
+/*footer内容*/
+.special-offer-detail-footer{
+    background-color: #fff;
+    margin: 20px 0 60px 0;
+    padding: 10px 0 10px 10px;
+}
+.special-offer-detail-footer p{
+    color: #999;
+}

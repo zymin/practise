@@ -15,17 +15,6 @@
     width: 100%;
     height: auto;
 }
-.img-account{
-    position: absolute;
-    bottom: 20px;
-    left: 20px;
-    width: 50px;
-    height: 20px;
-    border-radius: 10px;
-    background-color: rgba(0,0,0,.8);
-    color: #fff;
-    text-align: center;
-}
 .car-detail-advertise{
     margin-top: 10px;
     padding-bottom: 20px;

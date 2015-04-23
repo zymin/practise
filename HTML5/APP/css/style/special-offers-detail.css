@@ -1,0 +1,63 @@
+#car-img{
+    position: relative;
+    overflow: hidden;
+    left: 0;
+    -webkit-transition: all 1s linear;
+    -moz-transition: all 1s linear;
+    -ms-transition: all 1s linear;
+    -o-transition: all 1s linear;
+    transition: all 1s linear;
+}
+#car-img .img-items{
+    float: left;
+}
+#car-img .img-items img{
+    width: 100%;
+    height: auto;
+}
+/*panel中的样式*/
+.panel-body{
+    background-color: #fff;
+    border-bottom: 1px solid #ccc;
+}
+.panel-body ul {
+    list-style: disc;
+    color: #666;
+}
+.panel-body .price-value{
+    color: #000;
+    font-size: 18px;
+    font-weight: bold;
+}
+.panel-body .drive-away{
+    color: #999;
+    font-size: 12px;
+}
+.panel-body-footer{
+    border-top: 1px solid #999;
+    padding-top: 20px;
+}
+.panel-body-footer .col-xs-5 a{
+    display: block;
+    width: 100%;
+    background-color: #007cb8;
+    height: 30px;
+    line-height: 30px;
+    text-align: center;
+    color: #fff;
+    border-radius: 4px;
+}
+.panel-body-footer .col-xs-5:first-child{
+    padding-left: 0;
+}
+.panel-body-footer .col-xs-5:last-child{
+    padding-right: 0;
+}
+.panel-body-footer .col-xs-2{
+    text-align: center;
+    font-size: 25px;
+}
+.panel-body-footer .col-xs-2 a{
+    display: block;
+    color: #ccc;
+}

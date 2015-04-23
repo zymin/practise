@@ -1,22 +1,4 @@
-.head-new-car{
-    margin-top: 50px;
-    background-color: #317fc2;
-    color: #fff;
-    line-height: 50px;
-}
-.head-new-car a:link{
-    color: #fff;
-}
-.head-new-car a{
-    color: #fff;
-    font-size: 18px;
-    text-align: left;
-}
-.head-new-car h3{
-    text-align: center;
-    margin-top: 10px;
-    font-size: 20px;
-}
+
 /*浏览新车*/
 .browse-new-car{
     margin-top: 5px;
@@ -33,7 +15,7 @@
     margin-top: 0;
     margin-bottom: 0;
 }
-.car-brand{
+.car-brand{/*显示滚动条*/
     overflow: auto;
 }
 .swipe-carousel-body{
@@ -110,4 +92,62 @@
     line-height: 40px;
     font-size: 16px;
 }
-.
+
+/*新车中的广告*/
+.new-car-ads{
+    background-color: #fff;
+    margin-top: 20px;
+}
+.swipe-type-body{
+    width: 1180px;
+    text-align: center;
+}
+.body-type ul li{
+    border: none;
+    width: 114px;
+}
+.swipe-type-body li a {
+    display: inline-block;
+    width: 106px;
+    height: 62px;
+}
+.swipe-type-body li .body-type1{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -3px 2px;
+}
+.swipe-type-body li .body-type2{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -124px 2px;
+}
+.swipe-type-body li .body-type3{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -248px 2px;
+}
+.swipe-type-body li .body-type4{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: 0 -45px;
+}
+.swipe-type-body li .body-type5{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -124px -45px;
+}
+.swipe-type-body li .body-type6{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -248px -45px;
+}
+.swipe-type-body li .body-type7{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: 0 -90px;
+}
+.swipe-type-body li .body-type8{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -124px -90px;
+}
+.swipe-type-body li .body-type9{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: 0 -42px;
+}
+.swipe-type-body li .body-type10{
+    background: url("../../images/body-type.png") no-repeat;
+    background-position: -124px -90px;
+}

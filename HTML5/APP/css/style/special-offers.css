@@ -1,0 +1,70 @@
+.special-car-img img{
+    width: 100%;
+    height: auto;
+}
+.form-control{
+    margin-top: 10px;
+}
+.special-offers-car-detail{
+    width: 100%;
+    display: block;
+    border: 1px solid rgba(0, 0, 0, 0.28);
+    padding: 10px 10px 0 10px;
+    margin-top: 15px;
+}
+.special-offers-car-detail h4{
+    color: #fe6700;
+    font-weight: 600;
+}
+.special-offers-car-detail .special-offers-card-body{
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 10px;
+}
+.special-offers-card-body{
+    position: relative;
+}
+.special-offers-car-detail .special-offers-card-body i{
+    width: 20px;
+    height: 20px;
+    border-radius: 20px;
+    background-color: #2c7fbd;
+    text-align: center;
+    color: #fff;
+    line-height: 20px;
+    position: absolute;
+    right: -4px;
+    top: -11px;
+}
+.special-offers-car-detail .special-offers-card-footer{
+    width: 100%;
+    text-align: right;
+    font-size: 11px;
+    line-height: 32.5px;
+}
+.footer-show{
+    width: 100%;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+}
+/*底部返回到顶部的按钮*/
+.top-btn{
+    display: block;
+    background-color: #dfdfdf;
+    text-align: center;
+    line-height: 50px;
+    font-size: 18px;
+    color: #999;
+}
+.top-btn:link {
+    color: #fff;
+}
+/*注意事项的样式*/
+.notes-body{
+    margin-top: 20px;
+    margin-bottom: 60px;
+}
+.notes-body .note{
+    width: 100%;
+}
