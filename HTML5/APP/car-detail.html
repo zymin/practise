@@ -181,6 +181,7 @@
             <span class="car-detail-date">2015-04-21</span>
         </div>
     </section>
+    <!--评论-->
     <footer class="row">
         <div class="col-xs-12" id="comment-content"  style="display: none">
             <ul>
@@ -216,33 +217,54 @@
             </ul>
             <div class="clearfix"></div>
             <!--评论中的对话-->
-            <div id="conversation">
-                <div class="post-content">
-                    <div class="avatar">
-                        <div class="user">
-                            <img src="images/comment-portraits.png">
+            <ul id="conversation" class="media-list">
+                <li class="media">
+                    <div class="media-left avatar">
+                        <a href="#">
+                            <img class="media-object" src="images/comment-portraits.png">
+                        </a>
+                    </div>
+                    <div class="media-body">
+                        <header>
+                            <span class="comment-author"><strong>chewer</strong></span>
+                            <span class="post-meta">•</span>
+                            <span class="post-meta"> 5小时前</span>
+                        </header>
+                        <section>
+                            <p>I can't even imagine what around 4000Nm would feel like!Just like the Koenigsegg CCX that TopGear shoehorned a spoiler to so that it could complete a flying lap of their test track! Unless this one does in fact have a retractable wing..</p>
+                        </section>
+                        <footer>
+                            <span class="post-meta comment-replay">回复</span>
+                            <span class="post-meta">•</span>
+                            <span class="post-meta comment-share">分享</span>
+                        </footer>
+                        <!--下个人的回复-->
+                        <div class="media">
+                            <div class="media-left avatar">
+                                <a href="#">
+                                    <img src="images/comment-portraits.png">
+                                </a>
+                            </div>
+                            <div class="media-body">
+                                <header>
+                                    <span class="comment-author"><strong>Chewer</strong></span>
+                                    <span class="post-meta">•</span>
+                                    <span class="post-meta"> 5小时前</span>
+                                </header>
+                                <section>
+                                    <p>I can't even imagine what around 4000Nm would feel like!Just like the Koenigsegg CCX that TopGear shoehorned a spoiler to so that it could complete a flying lap of their test track! Unless this one does in fact have a retractable wing..</p>
+                                </section>
+                                <footer>
+                                    <span class="post-meta comment-replay">回复</span>
+                                    <span class="post-meta">•</span>
+                                    <span class="post-meta comment-share">分享</span>
+                                </footer>
+                            </div>
                         </div>
                     </div>
-                    <div class="post-body">
-                        <div class="post-body-content">
-                            <header>
-                                <span class="comment-author">chewer</span>
-                                <span class="post-meta">•</span>
-                                <span class="post-meta"> 5小时前</span>
-                            </header>
-                            <section>
-                                <p>I can't even imagine what around 4000Nm would feel like!Just like the Koenigsegg CCX that TopGear shoehorned a spoiler to so that it could complete a flying lap of their test track! Unless this one does in fact have a retractable wing..</p>
-                            </section>
-                            <footer>
-                                <span class="post-meta comment-replay">回复</span>
-                                <span class="post-meta">•</span>
-                                <span class="post-meta comment-share">分享</span>
-                            </footer>
-                        </div>
-                    </div>
-                </div>
+                </li>
                 <div class="clearfix"></div>
-            </div>
+            </ul>
         </div>
         <div class="col-xs-12" id="car-detail-comments-show">
             <div class="show-hide-comment active">

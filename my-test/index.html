@@ -8,8 +8,25 @@
 <button onclick="test1()">点击按钮</button>
 </body>
 <script>
-    function test1(){
+    var oBox = document.getElementById('use');
+    var aUl = oBox.getElementsByTagName('ul');
+    for( var i=0;i<aUl.length; i++){
+        var aBos = aUl[i].getElementsByTagName('div');
+        var aImg= aUl[i].getElementsByTagName('img');
+    }
+    for( var j=0; j<aImg.length;j++){
+        aImg[j].index=j;
+        aImg.onclick = function(){
+            for( var j=0; j<aImg.length;j++){
+                if(aBos[j].style.display =='none'){
+                    aBos[j].style.display = 'biock'
+                }
+                else{
+                    aBos[j].style.display ='none'
+                }
+            }
 
+        }
     }
 </script>
 <script src="js/test2.js"></script>

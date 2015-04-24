@@ -207,3 +207,11 @@ ul,ol{
     color: #fff;
     text-align: center;
 }
+/*显示*/
+.fadeIn{
+    display: block;
+}
+/*隐藏*/
+.fadeOut{
+    display: none;
+}

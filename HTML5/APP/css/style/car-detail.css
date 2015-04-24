@@ -53,7 +53,7 @@
 #comment-content ul{
 
 }
-#comment-content ul li{
+#comment-content ul .tab-conversation{
     width: 75px;
     float: left;
 }
@@ -81,21 +81,11 @@
     float: left;
     margin-top: 8px;
 }
-#conversation .post-body{
-    height: auto;
-    margin-top: 10px;
-}
-#conversation .post-content{
-    margin-top: 10px;
-}
 #conversation .avatar img{
     width: 48px;
     height: 48px;
     display: block;
     border-radius: 3px;
-}
-#conversation .post-content .post-body p{
-    margin: 3px 0 3px 0;
 }
 #conversation .post-meta{
     color: rgba(0,39,59,.35);
