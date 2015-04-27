@@ -1,0 +1,10 @@
+node_modules
+dist
+.tmp
+.sass-cache
+bower_components
+app/bower_components
+.idea
+*/.idea
+app/.idea
+workspace.xml
