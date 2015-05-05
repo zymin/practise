@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="mainApp" ng-controller="HyperLinkController">
 <head lang="en">
     <meta charset="UTF-8">
     <title>购车-首页</title>
@@ -12,17 +12,18 @@
 </head>
 <body>
 <div class="container-fluid">
-    <header class="row head">
-        <div class="col-xs-2 pull_left">
-            <a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>
-        </div>
-        <div class="col-xs-8">
-            <h3>来 福 乐</h3>
-        </div>
-        <div class="col-xs-2 pull_right">
-            <a href="#"><i class="glyphicon glyphicon-th"></i></a>
-        </div>
-    </header>
+    <!--<header class="row head">-->
+        <!--<div class="col-xs-2 pull_left">-->
+            <!--<a href="#"><i class="glyphicon glyphicon-menu-hamburger"></i></a>-->
+        <!--</div>-->
+        <!--<div class="col-xs-8">-->
+            <!--<h3>来 福 乐</h3>-->
+        <!--</div>-->
+        <!--<div class="col-xs-2 pull_right">-->
+            <!--<a href="#"><i class="glyphicon glyphicon-th"></i></a>-->
+        <!--</div>-->
+    <!--</header>-->
+    <top-header></top-header>
     <section class="row tabs-header">
         <div class="col-xs-6 home">首 页</div>
         <div class="col-xs-6 member-center">会员中心</div>
@@ -39,7 +40,8 @@
                 <a href="search-for-cars.html">
                     <img src="images/home_search.jpg">
                 </a>
-                <a href="search-for-cars.html" class="search-btn">搜 索</a>
+                <!--<a href="search-for-cars.html" class="search-btn">搜 索</a>-->
+                <search-btn name="search"></search-btn>
             </div>
             <div class="col-xs-6">
                 <a href="new-car.html" class="show-diff-room">新 车</a>
@@ -48,12 +50,14 @@
                 <a href="special-offers.html" class="show-diff-room">特别优惠</a>
             </div>
             <div class="col-xs-12 tabs-content-home-sale">
-                <a href="#" class="search-btn sale-btn">销售您的车</a>
+                <!--<a href="#" class="search-btn sale-btn">销售您的车</a>-->
+                <search-btn class="sale-btn" name="saleMyCar"></search-btn>
             </div>
             <div class="col-xs-12">
                 <div class="list-block-title">
                     <h4>新 闻 & 评 述</h4>
-                    <a href="view-more.html" class="view-more">查看更多</a>
+                    <!--<a href="view-more.html" class="view-more">查看更多</a>-->
+                    <view-more></view-more>
                 </div>
             </div>
             <div class="col-xs-6 items" onclick="carDetail()">
@@ -146,107 +150,110 @@
             </div>
         </div>
     </section>
-    <nav class="row">
-        <div id="left-nav">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <span class="head-portrait"><i class="glyphicon glyphicon-user"></i></span>
-                    <span class="login-sign"><a href="#">登 录 / 注 册</a></span>
-                </div>
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <div class="nav-home">
-                            <a href="#">首 页</a>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="nav-search">
-                            <div class="nav-search-title">
-                                <i class="glyphicon glyphicon-search"></i>
-                                <span class="disabled">搜 索</span>
-                            </div>
-                            <div class="nav-search-content">
-                                <a href="search-for-cars.html" class="nav-search-content-list">促销车</a>
-                                <a href="new-car.html" class="nav-search-content-list">新车展览</a>
-                                <a href="special-offers.html" class="nav-search-content-list">特惠车</a>
-                                <a href="#" class="nav-search-content-list">帮我选择</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="nav-search">
-                            <div class="nav-search-title">
-                                <i class="glyphicon glyphicon-star-empty"></i>
-                                <span class="disabled">会员中心</span>
-                            </div>
-                            <div class="nav-search-content">
-                                <a href="#" class="nav-search-content-list">汽车仪表</a>
-                                <a href="#" class="nav-search-content-list">保存的汽车</a>
-                                <a href="#" class="nav-search-content-list">保存的搜索</a>
-                                <a href="#" class="nav-search-content-list">你的车库</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="nav-search">
-                            <div class="nav-search-title">
-                                <i class="glyphicon glyphicon glyphicon-usd"></i>
-                                <span class="disabled">卖出你的车</span>
-                            </div>
-                            <div class="nav-search-content">
-                                <a href="#" class="nav-search-content-list">创建一个广告</a>
-                                <a href="#" class="nav-search-content-list">管理我的广告</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="nav-search">
-                            <div class="nav-search-title">
-                                <i class="glyphicon glyphicon glyphicon-book"></i>
-                                <span class="disabled">再次搜索</span>
-                            </div>
-                            <div class="nav-search-content">
-                                <a href="view-more.html" class="nav-search-content-list">新 闻 & 评 述</a>
-                                <a href="#" class="nav-search-content-list">视 频</a>
-                                <a href="#" class="nav-search-content-list">评 估</a>
-                                <a href="#" class="nav-search-content-list">找个经商者</a>
-                            </div>
-                        </div>
-                    </li>
-                    <li class="list-group-item">
-                        <div class="nav-search">
-                            <div class="nav-search-title">
-                                <i class="glyphicon glyphicon-th"></i>
-                                <span class="disabled">更 多</span>
-                            </div>
-                            <div class="nav-search-content">
-                                <a href="#" class="nav-search-content-list">反 馈</a>
-                                <a href="#" class="nav-search-content-list">联 系</a>
-                                <a href="#" class="nav-search-content-list">条 款 & 条 件</a>
-                                <a href="#" class="nav-search-content-list">私 人</a>
-                                <a href="#" class="nav-search-content-list">经典网站</a>
-                            </div>
-                        </div>
-                    </li>
-                </ul>
-            </div>
-        </div>
-        <div id="right-nav">
-            <div class="panel panel-default">
-                <ul class="list-group">
-                    <li class="list-group-item">
-                        <i class="glyphicon glyphicon-search"></i>
-                        <span class="disabled nav-home">首 页</span>
-                        <a href="#" class="nav-search-content-list">反 馈</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-    <div id="modal-panel" style="display: none"></div>
+    <navigation></navigation>
+    <!--<nav class="row">-->
+        <!--<div id="left-nav">-->
+            <!--<div class="panel panel-default">-->
+                <!--<div class="panel-heading">-->
+                    <!--<span class="head-portrait"><i class="glyphicon glyphicon-user"></i></span>-->
+                    <!--<span class="login-sign"><a href="#">登 录 / 注 册</a></span>-->
+                <!--</div>-->
+                <!--<ul class="list-group">-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-home">-->
+                            <!--<a href="#">首 页</a>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-search">-->
+                            <!--<div class="nav-search-title">-->
+                                <!--<i class="glyphicon glyphicon-search"></i>-->
+                                <!--<span class="disabled">搜 索</span>-->
+                            <!--</div>-->
+                            <!--<div class="nav-search-content">-->
+                                <!--<a href="search-for-cars.html" class="nav-search-content-list">促销车</a>-->
+                                <!--<a href="new-car.html" class="nav-search-content-list">新车展览</a>-->
+                                <!--<a href="special-offers.html" class="nav-search-content-list">特惠车</a>-->
+                                <!--<a href="#" class="nav-search-content-list">帮我选择</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-search">-->
+                            <!--<div class="nav-search-title">-->
+                                <!--<i class="glyphicon glyphicon-star-empty"></i>-->
+                                <!--<span class="disabled">会员中心</span>-->
+                            <!--</div>-->
+                            <!--<div class="nav-search-content">-->
+                                <!--<a href="#" class="nav-search-content-list">汽车仪表</a>-->
+                                <!--<a href="#" class="nav-search-content-list">保存的汽车</a>-->
+                                <!--<a href="#" class="nav-search-content-list">保存的搜索</a>-->
+                                <!--<a href="#" class="nav-search-content-list">你的车库</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-search">-->
+                            <!--<div class="nav-search-title">-->
+                                <!--<i class="glyphicon glyphicon glyphicon-usd"></i>-->
+                                <!--<span class="disabled">卖出你的车</span>-->
+                            <!--</div>-->
+                            <!--<div class="nav-search-content">-->
+                                <!--<a href="#" class="nav-search-content-list">创建一个广告</a>-->
+                                <!--<a href="#" class="nav-search-content-list">管理我的广告</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-search">-->
+                            <!--<div class="nav-search-title">-->
+                                <!--<i class="glyphicon glyphicon glyphicon-book"></i>-->
+                                <!--<span class="disabled">再次搜索</span>-->
+                            <!--</div>-->
+                            <!--<div class="nav-search-content">-->
+                                <!--<a href="view-more.html" class="nav-search-content-list">新 闻 & 评 述</a>-->
+                                <!--<a href="#" class="nav-search-content-list">视 频</a>-->
+                                <!--<a href="#" class="nav-search-content-list">评 估</a>-->
+                                <!--<a href="#" class="nav-search-content-list">找个经商者</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                    <!--<li class="list-group-item">-->
+                        <!--<div class="nav-search">-->
+                            <!--<div class="nav-search-title">-->
+                                <!--<i class="glyphicon glyphicon-th"></i>-->
+                                <!--<span class="disabled">更 多</span>-->
+                            <!--</div>-->
+                            <!--<div class="nav-search-content">-->
+                                <!--<a href="#" class="nav-search-content-list">反 馈</a>-->
+                                <!--<a href="#" class="nav-search-content-list">联 系</a>-->
+                                <!--<a href="#" class="nav-search-content-list">条 款 & 条 件</a>-->
+                                <!--<a href="#" class="nav-search-content-list">私 人</a>-->
+                                <!--<a href="#" class="nav-search-content-list">经典网站</a>-->
+                            <!--</div>-->
+                        <!--</div>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!--<div id="right-nav">-->
+            <!--<div class="panel panel-default">-->
+                <!--<ul class="list-group">-->
+                    <!--<li class="list-group-item">-->
+                        <!--<i class="glyphicon glyphicon-search"></i>-->
+                        <!--<span class="disabled nav-home">首 页</span>-->
+                        <!--<a href="#" class="nav-search-content-list">反 馈</a>-->
+                    <!--</li>-->
+                <!--</ul>-->
+            <!--</div>-->
+        <!--</div>-->
+    <!--</nav>-->
+    <!--<div id="modal-panel" style="display: none"></div>-->
 </div>
 </body>
 <script src="js/jquery-1.9.1.js"></script>
 <script src="js/bootstrap.min.js"></script>
+<script src="ng/js/angular.js"></script>
+<script src="ng/ng-app/ng-controller.js"></script>
 <script src="js/index.js"></script>
 </html>

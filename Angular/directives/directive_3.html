@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html ng-app="myApp">
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>完成拖拽指令</title>
+</head>
+<body>
+<div my-directive
+     my-url="http://google.com"
+     my-link-text="Click me to go to Google">
+</div>
+</body>
+<script src="js/angular.js"></script>
+<script>
+angular.module('myApp', [])
+        .directive('myDirective', function() {
+            return {
+                restrict: 'A',
+                replace: true,
+//                template: '<a href="http://google.com">Click me to go to Google</a>'
+                template: '<a href="{{ myUrl }}">{{ myLinkText }}</a>'
+            }
+        })
+</script>
+</html>
